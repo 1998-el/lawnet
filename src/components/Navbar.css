@@ -1,0 +1,270 @@
+/* Top Bar */
+.top-bar {
+  background: #1a365d;
+  padding: 8px 0;
+  font-size: 0.85rem;
+}
+
+.top-bar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar-contact {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.top-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.top-contact-item:hover {
+  color: #ff6b00;
+}
+
+.top-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.language-selector {
+  position: relative;
+}
+
+.language-selector details {
+  position: relative;
+}
+
+.language-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  list-style: none;
+}
+
+.language-btn::-webkit-details-marker {
+  display: none;
+}
+
+.language-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 80px;
+  z-index: 100;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.language-selector details[open] .language-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.language-option {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #333333;
+  transition: background 0.3s ease;
+}
+
+.language-option:hover {
+  background: #f5f5f5;
+  color: #ff6b00;
+}
+
+/* Main Navigation */
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333333;
+  text-decoration: none;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.navbar-logo span {
+  color: #ff6b00;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-link {
+  color: #555555;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff6b00;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ff6b00;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.btn-contact {
+  background: #ff6b00;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.btn-contact:hover {
+  background: #e55f00;
+}
+
+.btn-contact::after {
+  display: none;
+}
+
+/* Tablet Landscape */
+@media (max-width: 1024px) {
+  .navbar-menu {
+    gap: 20px;
+  }
+
+  .top-bar-contact {
+    gap: 16px;
+  }
+}
+
+/* Tablet Portrait */
+@media (max-width: 992px) {
+  .top-bar-contact {
+    gap: 12px;
+  }
+
+  .top-contact-item span {
+    display: none;
+  }
+
+  .top-contact-item {
+    padding: 4px;
+  }
+
+  .navbar-menu {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .btn-contact {
+    padding: 8px 16px;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+  /* Hide desktop top-bar on mobile */
+  .top-bar {
+    display: none;
+  }
+
+  .navbar-container {
+    padding: 0 16px;
+    height: 60px;
+  }
+
+  .navbar-logo {
+    font-size: 1.25rem;
+  }
+
+  /* Hide desktop menu on mobile */
+  .navbar-menu {
+    display: none;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .navbar-container {
+    height: 56px;
+  }
+
+  .navbar-logo {
+    font-size: 1.1rem;
+  }
+}
