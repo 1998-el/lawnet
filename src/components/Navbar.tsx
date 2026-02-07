@@ -61,16 +61,16 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <ul className="navbar-menu">
             <li>
-              <a href="/" className="nav-link active">Accueil</a>
+              <a href="/" className="nav-link active">Home</a>
             </li>
             <li>
-              <a href="/lawyers" className="nav-link">Avocats</a>
+              <a href="/lawyers" className="nav-link">Lawyers</a>
             </li>
             <li>
-              <a href="/domain" className="nav-link">Domaines</a>
+              <a href="/domain" className="nav-link">Practice Areas</a>
             </li>
             <li>
-              <a href="/about" className="nav-link">À propos</a>
+              <a href="/about" className="nav-link">About</a>
             </li>
             <li>
               <a href="/contact" className="nav-link btn-contact">Contact</a>
