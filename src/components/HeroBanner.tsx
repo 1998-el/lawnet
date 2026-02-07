@@ -7,7 +7,7 @@ const HeroBanner: React.FC = () => {
     <section className="hero-banner">
       <img 
         src="/assets/droit.jpg" 
-        alt="Cabinet d'Avocats" 
+        alt="Legal Partner" 
         className="hero-banner-bg"
       />
       <div className="hero-banner-overlay"></div>
@@ -16,38 +16,38 @@ const HeroBanner: React.FC = () => {
        
         
         <h1 className="hero-banner-title">
-          Votre partenaire<br />
-          juridique de confiance
+          Your Trusted<br />
+          Legal Partner
         </h1>
         
         <p className="hero-banner-subtitle">
-          Des solutions juridiques professionnelles et personnalisées 
-          pour protéger vos intérêts avec excellence.
+          Professional and personalized legal solutions
+          to protect your interests with excellence.
         </p>
         
         <div className="hero-banner-search">
           <div className="hero-banner-search-input">
             <ArrowRight size={18} className="search-icon" />
-            <input type="text" placeholder="Rechercher un avocat, un domaine..." />
+            <input type="text" placeholder="Search for a lawyer, a domain..." />
           </div>
-          <button className="hero-banner-search-btn">Rechercher</button>
+          <button className="hero-banner-search-btn">Search</button>
         </div>
         
         <div className="hero-banner-stats">
           <div className="hero-banner-stat">
             <Star size={20} />
             <span className="hero-banner-stat-number">15+</span>
-            <span className="hero-banner-stat-label">Années d'expérience</span>
+            <span className="hero-banner-stat-label">Years of Experience</span>
           </div>
           <div className="hero-banner-stat">
             <Shield size={20} />
             <span className="hero-banner-stat-number">500+</span>
-            <span className="hero-banner-stat-label">Clients satisfaits</span>
+            <span className="hero-banner-stat-label">Satisfied Clients</span>
           </div>
           <div className="hero-banner-stat">
             <Scale size={20} />
             <span className="hero-banner-stat-number">98%</span>
-            <span className="hero-banner-stat-label">Taux de succès</span>
+            <span className="hero-banner-stat-label">Success Rate</span>
           </div>
         </div>
       </div>
