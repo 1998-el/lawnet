@@ -1,6 +1,5 @@
 import { MapPin, Phone, Mail, Linkedin, Twitter, Facebook, Scale } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../context/LanguageContext';
 import './MobileFooter.css';
 
 const fadeInUp = {
@@ -23,7 +22,6 @@ const staggerContainer = {
 };
 
 const MobileFooter = () => {
-  const { t } = useLanguage();
 
   return (
     <footer className="mobile-footer">

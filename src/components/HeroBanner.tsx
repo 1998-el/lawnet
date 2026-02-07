@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scale, Star, Shield, ArrowRight, Phone, Mail } from 'lucide-react';
+import { Scale, Star, Shield, ArrowRight } from 'lucide-react';
 import './HeroBanner.css';
 
 const HeroBanner: React.FC = () => {

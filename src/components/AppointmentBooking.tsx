@@ -3,15 +3,12 @@ import { motion } from 'framer-motion';
 import { 
   Calendar, 
   Clock, 
-  MapPin, 
   Video, 
   Building, 
-  Phone,
   ChevronLeft,
   ChevronRight,
   Star,
   CheckCircle,
-  CreditCard,
   Shield
 } from 'lucide-react';
 import './AppointmentBooking.css';

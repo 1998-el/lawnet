@@ -14,12 +14,10 @@ import {
   Eye,
   Clock
 } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
 import HeroBanner from './HeroBanner';
 import './Home.css';
 
 const Home = () => {
-  const { t } = useLanguage();
 
   return (
     <main className="home">

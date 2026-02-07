@@ -12,7 +12,6 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../context/LanguageContext';
 import './Footer.css';
 
 const fadeInUp = {
@@ -25,7 +24,6 @@ const fadeInUp = {
 };
 
 const Footer = () => {
-  const { t } = useLanguage();
   
   return (
     <footer className="footer">

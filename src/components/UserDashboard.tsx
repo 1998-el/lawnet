@@ -12,11 +12,8 @@ import {
   Shield,
   Clock,
   MapPin,
-  Phone,
-  Mail,
   Edit,
   ChevronRight,
-  StarHalf,
   CheckCircle,
   XCircle
 } from 'lucide-react';
@@ -33,7 +30,7 @@ const fadeInUp = {
 
 const UserDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
-  const [notifications, setNotifications] = useState([
+  const [notifications] = useState([
     { id: 1, type: 'appointment', message: 'Reminder: Appointment with Sarah Johnson tomorrow at 2:00 PM', read: false },
     { id: 2, type: 'message', message: 'New message from David Thompson', read: false },
     { id: 3, type: 'review', message: 'Your review has been published', read: true }

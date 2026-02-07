@@ -1,4 +1,4 @@
-import { Shield, Star, Users, Clock, Award, Target } from 'lucide-react';
+import { Shield, Clock, Award, Target } from 'lucide-react';
 import './About.css';
 
 const About = () => {

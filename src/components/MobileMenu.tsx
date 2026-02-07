@@ -3,7 +3,6 @@ import {
   Search, 
   User, 
   MessageSquare, 
-  Calendar,
   Home,
   FileText,
   Scale,
@@ -13,7 +12,7 @@ import {
 import './MobileMenu.css';
 
 const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage } = useLanguage();
 
   const handleLanguageChange = (lang: 'fr' | 'en') => {
     setLanguage(lang);
