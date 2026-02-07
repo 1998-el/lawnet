@@ -1,219 +1,194 @@
-/* Mobile Menu Container - Hidden by default */
-.mobile-menu-container {
-  display: none;
-}
-
-/* Hamburger Toggle Button */
-.mobile-menu-toggle {
-  display: none;
-  width: 44px;
-  height: 44px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  -webkit-tap-highlight-color: transparent;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-}
-
-.mobile-menu-toggle::-webkit-details-marker {
-  display: none;
-}
-
-/* Hamburger Icon */
-.hamburger {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: #333333;
-  position: relative;
-  transition: background 0.3s ease;
-}
-
-.hamburger::before,
-.hamburger::after {
-  content: '';
-  position: absolute;
+/* Mobile Menu Overlay */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%;
-  height: 2px;
-  background: #333333;
-  transition: transform 0.3s ease;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
-.hamburger::before {
-  top: -8px;
-}
-
-.hamburger::after {
-  bottom: -8px;
-}
-
-/* Hamburger Animation when Open */
-.mobile-menu-container[open] .hamburger {
-  background: transparent;
-}
-
-.mobile-menu-container[open] .hamburger::before {
-  transform: rotate(45deg) translate(5px, 6px);
-}
-
-.mobile-menu-container[open] .hamburger::after {
-  transform: rotate(-45deg) translate(5px, -6px);
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Mobile Navigation */
 .mobile-nav {
   position: fixed;
-  top: 100px;
-  left: 0;
+  top: 0;
   right: 0;
-  background: #ffffff;
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.mobile-menu-container[open] .mobile-nav {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Mobile Menu List */
-.mobile-menu {
-  list-style: none;
-  margin: 0;
-  padding: 20px 16px;
+  bottom: 0;
+  width: 320px;
+  max-width: 100%;
+  background: #1a1a1a;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
-/* Mobile Menu Links */
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #333;
+}
+
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.mobile-logo svg {
+  color: #fff;
+}
+
+.mobile-logo span {
+  font-family: Georgia, serif;
+}
+
+.mobile-logo span span {
+  color: #fff;
+}
+
+.close-menu {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.close-menu:hover {
+  color: #fff;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  flex: 1;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.mobile-menu li {
+  list-style: none;
+}
+
 .mobile-link {
-  display: block;
-  padding: 18px 0;
-  text-align: center;
-  text-decoration: none;
-  color: #555555;
-  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 24px;
+  color: #ccc;
+  font-size: 1rem;
   font-weight: 500;
-  border-bottom: 1px solid #f0f0f0;
-  transition: color 0.3s ease;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .mobile-link:hover,
 .mobile-link.active {
-  color: #ff6b00;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-left: 3px solid #fff;
 }
 
-/* Mobile Contact Button */
-.mobile-btn-contact {
-  background: #ff6b00;
-  color: #ffffff;
-  padding: 14px 28px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 6px;
-  margin-top: 16px;
-  border-bottom: none;
-  transition: background 0.3s ease;
+.mobile-link svg {
+  flex-shrink: 0;
 }
 
-.mobile-btn-contact:hover {
-  background: #e55f00;
-  color: #ffffff;
+/* Mobile Menu Actions */
+.mobile-menu-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #333;
 }
 
-/* Mobile Language Selector in Menu */
+.mobile-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 0.9375rem;
+}
+
+.mobile-btn.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.mobile-btn.btn-outline:hover {
+  border-color: #fff;
+}
+
+.mobile-btn.btn-primary {
+  background: #fff;
+  color: #1a1a1a;
+  border: none;
+}
+
+.mobile-btn.btn-primary:hover {
+  background: #f5f5f5;
+}
+
+/* Mobile Language Selector */
 .mobile-lang-selector {
   display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 16px;
-  border-top: 1px solid #f0f0f0;
-  margin-top: 8px;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #333;
+}
+
+.mobile-lang-selector span {
+  font-size: 0.875rem;
+  color: #888;
 }
 
 .mobile-lang-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  background: none;
+  border: 1px solid #444;
   padding: 8px 16px;
   border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #555555;
-  background: #f5f5f5;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #888;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s;
 }
 
 .mobile-lang-item:hover {
-  background: #e0e0e0;
-  color: #333333;
+  border-color: #666;
+  color: #fff;
 }
 
 .mobile-lang-item.active {
-  background: #ff6b00;
-  color: #ffffff;
+  background: #fff;
+  color: #1a1a1a;
+  border-color: #fff;
 }
 
-/* Mobile Overlay */
-.mobile-overlay {
-  position: fixed;
-  top: 100px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 998;
-  pointer-events: none;
-}
-
-.mobile-menu-container[open] ~ .mobile-overlay {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* Mobile Landscape (768px) */
+/* Responsive */
 @media (max-width: 768px) {
-  .mobile-menu-container {
-    display: block;
-  }
-
-  .mobile-menu-toggle {
-    display: flex;
-  }
-
   .mobile-nav {
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
-  }
-}
-
-/* Mobile Portrait (480px) */
-@media (max-width: 480px) {
-  .mobile-nav {
-    top: 96px;
-    max-height: calc(100vh - 96px);
-  }
-
-  .mobile-overlay {
-    top: 96px;
-  }
-
-  .hamburger {
-    width: 20px;
+    width: 100%;
   }
 }

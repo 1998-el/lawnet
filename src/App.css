@@ -1,7 +1,16 @@
+/* ============================================
+   APP - Minimalist Corporate Legal
+   ============================================ */
+
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--white);
+}
+
+.main-content {
+  flex: 1;
 }
 
 /* Mobile Footer Toggle */

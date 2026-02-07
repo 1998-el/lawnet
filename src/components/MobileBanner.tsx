@@ -1,38 +1,23 @@
-import { Globe, ChevronDown } from 'lucide-react';
-import { useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { Phone, Mail } from 'lucide-react';
 import './MobileBanner.css';
 
 const MobileBanner = () => {
   const { language, setLanguage } = useLanguage();
-  const detailsRef = useRef<HTMLDetailsElement>(null);
-
-  const handleLanguageChange = (lang: 'fr' | 'en') => {
-    setLanguage(lang);
-    if (detailsRef.current) {
-      detailsRef.current.removeAttribute('open');
-    }
-  };
 
   return (
     <div className="mobile-banner">
       <div className="mobile-banner-container">
-        {/* Phone Number Carousel */}
-        <div className="phone-carousel">
-          <div className="phone-carousel-inner">
-            <a href="tel:+237242009397" className="phone-item">
-              <span className="phone-icon">&#9742;</span>
-              <span className="phone-text">+237 242 009 397</span>
-            </a>
-            <a href="tel:+237679177560" className="phone-item">
-              <span className="phone-icon">&#9742;</span>
-              <span className="phone-text">+237 679 177 560</span>
-            </a>
-            <a href="mailto:contact@bwgroup.com" className="phone-item">
-              <span className="phone-icon">&#9993;</span>
-              <span className="phone-text">contact@bwgroup.com</span>
-            </a>
-          </div>
+        {/* Contact Info */}
+        <div className="mobile-banner-contact">
+          <a href="tel:+1-800-LAWNET" className="mobile-contact-item">
+            <Phone size={16} className="contact-icon" />
+            <span className="contact-text">1-800-LAWNET</span>
+          </a>
+          <a href="mailto:info@lawnet.com" className="mobile-contact-item">
+            <Mail size={16} className="contact-icon" />
+            <span className="contact-text">info@lawnet.com</span>
+          </a>
         </div>
 
         {/* Language Toggle */}

@@ -1,0 +1,240 @@
+/* ============================================
+   DOMAIN PAGE - Minimalist Sober Legal Design
+   ============================================ */
+
+.domain-page {
+  padding-top: 0;
+}
+
+/* Header */
+.domain-header {
+  background: #1a1a1a;
+  padding: 64px 0 72px;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.domain-header .container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.domain-header h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+.domain-header p {
+  font-size: 1rem;
+  color: #999;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Content */
+.domain-content {
+  padding: 64px 0;
+  background: #f5f5f5;
+}
+
+.domain-content .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Grid */
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Domain Card */
+.domain-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 28px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.domain-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--domain-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.domain-card:hover {
+  border-color: #1a1a1a;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.domain-card:hover::before {
+  transform: scaleX(1);
+}
+
+.domain-card.hovered {
+  border-color: #1a1a1a;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.domain-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--domain-light);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--domain-color);
+  transition: all 0.3s ease;
+}
+
+.domain-card:hover .domain-icon {
+  background: var(--domain-color);
+  color: #fff;
+}
+
+.domain-card h3 {
+  font-family: Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 12px;
+}
+
+.domain-card p {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.domain-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.lawyer-count {
+  font-size: 0.75rem;
+  color: #999;
+  font-weight: 500;
+}
+
+.domain-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.domain-link:hover {
+  gap: 10px;
+}
+
+.domain-link svg {
+  transition: transform 0.2s ease;
+}
+
+.domain-card:hover .domain-link svg {
+  transform: translateX(4px);
+}
+
+/* CTA Section */
+.domain-cta {
+  background: #1a1a1a;
+  padding: 72px 0;
+  text-align: center;
+}
+
+.domain-cta .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.domain-cta h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 16px;
+}
+
+.domain-cta p {
+  font-size: 1rem;
+  color: #999;
+  margin: 0 0 32px;
+}
+
+.domain-cta .btn-primary {
+  background: #fff;
+  color: #1a1a1a;
+  border: none;
+  padding: 14px 32px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.domain-cta .btn-primary:hover {
+  background: #f5f5f5;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .domain-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .domain-header {
+    padding: 48px 0 56px;
+  }
+
+  .domain-content {
+    padding: 40px 0;
+  }
+
+  .domain-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .domain-card {
+    padding: 24px;
+  }
+
+  .domain-cta {
+    padding: 48px 0;
+  }
+}

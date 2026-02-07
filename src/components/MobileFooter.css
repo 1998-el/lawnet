@@ -1,93 +1,102 @@
-/* Mobile Footer - Desktop hidden by default */
+/* Mobile Footer */
 .mobile-footer {
-  display: none;
-  background: #1a365d;
+  background: #1a1a1a;
   color: #ffffff;
-  padding: 0;
+  padding: 40px 20px 20px;
+  display: none;
 }
 
 /* Brand Section */
 .mobile-footer-brand {
-  padding: 28px 24px;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 32px;
 }
 
 .mobile-footer-logo {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin: 0 0 10px;
-  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.375rem;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.mobile-footer-logo svg {
+  color: #fff;
 }
 
 .mobile-footer-logo span {
-  color: #ff6b00;
+  color: #fff;
+}
+
+.mobile-footer-logo span span {
+  color: #c9a227;
 }
 
 .mobile-footer-desc {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 18px;
-  line-height: 1.5;
+  font-size: 0.9375rem;
+  color: #cccccc;
+  line-height: 1.7;
+  margin: 0 0 20px;
 }
 
 .mobile-footer-social {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .mobile-footer-social a {
-  width: 40px;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  background: #333333;
   border-radius: 8px;
+  color: #fff;
   transition: all 0.3s ease;
 }
 
 .mobile-footer-social a:hover {
-  background: #ff6b00;
+  background: #c9a227;
+  color: #1a1a1a;
 }
 
 /* Contact Cards */
 .mobile-footer-contacts {
-  padding: 16px 24px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  background: rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 16px;
+  margin-bottom: 32px;
 }
 
 .mobile-contact-card {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
+  gap: 14px;
+  padding: 16px;
+  background: #252525;
+  border-radius: 12px;
+  color: #fff;
   text-decoration: none;
-  color: inherit;
   transition: all 0.3s ease;
 }
 
 .mobile-contact-card:hover {
-  background: rgba(255, 107, 0, 0.15);
+  background: #333333;
 }
 
 .mobile-contact-icon {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  background: #c9a227;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ff6b00;
-  border-radius: 6px;
+  color: #1a1a1a;
   flex-shrink: 0;
 }
 
@@ -95,79 +104,63 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  min-width: 0;
 }
 
 .mobile-contact-label {
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 0.8125rem;
+  color: #aaaaaa;
 }
 
 .mobile-contact-value {
-  font-size: 0.8rem;
-  color: #ffffff;
+  font-size: 0.9375rem;
   font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #fff;
 }
 
-/* Links Sections */
+/* Quick Links & Services */
 .mobile-footer-links,
 .mobile-footer-services {
-  padding: 20px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 24px;
 }
 
 .mobile-footer-links h3,
 .mobile-footer-services h3 {
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  margin: 0 0 14px;
-  color: #ffffff;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #ff6b00;
-  display: inline-block;
+  margin: 0 0 16px;
+  color: #fff;
+  font-family: var(--font-primary);
+  letter-spacing: 0.02em;
 }
 
 .mobile-links-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 .mobile-link-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 6px;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  color: #cccccc;
+  font-size: 0.9375rem;
+  transition: color 0.3s ease;
+  padding: 8px 0;
 }
 
 .mobile-link-item:hover {
-  background: rgba(255, 107, 0, 0.15);
-  color: #ff6b00;
+  color: #c9a227;
 }
 
-/* Bottom Section */
+/* Bottom */
 .mobile-footer-bottom {
-  padding: 18px 24px;
-  background: rgba(0, 0, 0, 0.15);
+  padding-top: 24px;
+  border-top: 1px solid #333333;
   text-align: center;
 }
 
 .mobile-footer-bottom p {
-  margin: 0 0 10px;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+  color: #888888;
+  margin: 0 0 12px;
 }
 
 .mobile-footer-legal {
@@ -177,39 +170,28 @@
 }
 
 .mobile-footer-legal a {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
-  text-decoration: none;
+  font-size: 0.875rem;
+  color: #888888;
   transition: color 0.3s ease;
 }
 
 .mobile-footer-legal a:hover {
-  color: #ff6b00;
+  color: #fff;
 }
 
-/* Show on Mobile */
+/* Responsive */
 @media (max-width: 768px) {
   .mobile-footer {
     display: block;
   }
 }
 
-/* Very Small Screens */
-@media (max-width: 380px) {
+@media (max-width: 480px) {
+  .mobile-footer {
+    padding: 32px 16px 16px;
+  }
+  
   .mobile-links-grid {
     grid-template-columns: 1fr;
-  }
-
-  .mobile-contact-card {
-    padding: 10px;
-  }
-
-  .mobile-contact-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .mobile-contact-value {
-    font-size: 0.75rem;
   }
 }

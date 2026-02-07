@@ -2,10 +2,14 @@ import {
   MapPin, 
   Phone, 
   Mail, 
-  Linkedin, 
-  Twitter, 
+  Linkedin,
   Facebook,
-  ArrowRight 
+  Twitter,
+  Instagram,
+  Scale,
+  Shield,
+  Clock,
+  CheckCircle
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
@@ -26,112 +30,151 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
+        {/* Main Footer */}
         <motion.div 
-          className="footer-section"
+          className="footer-main"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
           variants={fadeInUp}
         >
-          <h3 className="footer-logo">BW<span>GROUP</span></h3>
-          <p className="footer-description">
-            {t('footer.description')}
-          </p>
+          {/* Brand Section */}
+          <div className="footer-brand">
+            <div className="footer-logo">
+              <Scale size={32} />
+              <span>LAW<span>NET</span></span>
+            </div>
+            <p className="footer-description">
+              Connecting people with qualified lawyers for accessible, transparent legal assistance.
+            </p>
+            <div className="footer-trust">
+              <div className="trust-item">
+                <Shield size={18} />
+                <span>Verified Lawyers</span>
+              </div>
+              <div className="trust-item">
+                <Clock size={18} />
+                <span>24/7 Support</span>
+              </div>
+              <div className="trust-item">
+                <CheckCircle size={18} />
+                <span>Secure Platform</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="footer-section">
+            <h4>Quick Links</h4>
+            <ul className="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/search">Find a Lawyer</a></li>
+              <li><a href="/services">Practice Areas</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* Practice Areas */}
+          <div className="footer-section">
+            <h4>Practice Areas</h4>
+            <ul className="footer-links">
+              <li><a href="/search?area=criminal">Criminal Defense</a></li>
+              <li><a href="/search?area=family">Family Law</a></li>
+              <li><a href="/search?area=corporate">Corporate Law</a></li>
+              <li><a href="/search?area=real-estate">Real Estate</a></li>
+              <li><a href="/search?area=personal-injury">Personal Injury</a></li>
+              <li><a href="/search?area=immigration">Immigration</a></li>
+            </ul>
+          </div>
+
+          {/* Contact Section */}
+          <div className="footer-section">
+            <h4>Contact Us</h4>
+            <ul className="footer-contact">
+              <li>
+                <span className="contact-icon"><MapPin size={18} /></span>
+                <span>123 Legal Street, New York, NY 10001</span>
+              </li>
+              <li>
+                <span className="contact-icon"><Phone size={18} /></span>
+                <a href="tel:+1-800-LAWNET">1-800-LAWNET</a>
+              </li>
+              <li>
+                <span className="contact-icon"><Mail size={18} /></span>
+                <a href="mailto:info@lawnet.com">info@lawnet.com</a>
+              </li>
+            </ul>
+            <div className="footer-social">
+              <motion.a 
+                href="https://www.linkedin.com/company/lawnet"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                whileHover={{ scale: 1.2 }}
+              >
+                <Linkedin size={20} />
+              </motion.a>
+              <motion.a 
+                href="https://www.facebook.com/lawnet"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                whileHover={{ scale: 1.2 }}
+              >
+                <Facebook size={20} />
+              </motion.a>
+              <motion.a 
+                href="https://www.twitter.com/lawnet"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                whileHover={{ scale: 1.2 }}
+              >
+                <Twitter size={20} />
+              </motion.a>
+              <motion.a 
+                href="https://www.instagram.com/lawnet"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                whileHover={{ scale: 1.2 }}
+              >
+                <Instagram size={20} />
+              </motion.a>
+            </div>
+          </div>
         </motion.div>
 
+        {/* Newsletter Section */}
         <motion.div 
-          className="footer-section"
-          initial="hidden"
-          whileInView="visible"
+          className="footer-newsletter"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          variants={fadeInUp}
+          transition={{ duration: 0.6 }}
         >
-          <h4>{t('footer.quicklinks')}</h4>
-          <ul className="footer-links">
-            <motion.li variants={fadeInUp}><a href="/">{t('nav.home')}</a></motion.li>
-            <motion.li variants={fadeInUp}><a href="#services">{t('nav.services')}</a></motion.li>
-            <motion.li variants={fadeInUp}><a href="#about">{t('nav.about')}</a></motion.li>
-            <motion.li variants={fadeInUp}><a href="#contact">{t('nav.contact')}</a></motion.li>
-          </ul>
+          <div className="newsletter-content">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to our newsletter for legal tips and platform updates.</p>
+          </div>
+          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit" className="btn btn-primary">Subscribe</button>
+          </form>
         </motion.div>
 
+        {/* Footer Bottom */}
         <motion.div 
-          className="footer-section"
-          initial="hidden"
-          whileInView="visible"
+          className="footer-bottom"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          variants={fadeInUp}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h4>{t('footer.services')}</h4>
-          <ul className="footer-links">
-            <motion.li variants={fadeInUp}><a href="#services">{t('service.consulting')}</a></motion.li>
-            <motion.li variants={fadeInUp}><a href="#services">{t('service.innovation')}</a></motion.li>
-            <motion.li variants={fadeInUp}><a href="#services">{t('service.performance')}</a></motion.li>
-            <motion.li variants={fadeInUp}><a href="#services">{t('service.analytics')}</a></motion.li>
-          </ul>
-        </motion.div>
-
-        <motion.div 
-          className="footer-section"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-          variants={fadeInUp}
-        >
-          <h4>{t('footer.contact')}</h4>
-          <ul className="footer-contact">
-            <motion.li variants={fadeInUp}>
-              <span className="contact-icon"><MapPin size={18} /></span>
-              {t('contact.address')}
-            </motion.li>
-            <motion.li variants={fadeInUp}>
-              <span className="contact-icon"><Phone size={18} /></span>
-              {t('contact.phone')}
-            </motion.li>
-            <motion.li variants={fadeInUp}>
-              <span className="contact-icon"><Phone size={18} /></span>
-              {t('contact.phone2')}
-            </motion.li>
-            <motion.li variants={fadeInUp}>
-              <span className="contact-icon"><Mail size={18} /></span>
-              {t('contact.email')}
-            </motion.li>
-          </ul>
+          <p>© {new Date().getFullYear()} LAWNET. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
         </motion.div>
       </div>
-
-      <motion.div 
-        className="footer-bottom"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-      >
-        <p> BW Group Ltd Copyright &copy; {new Date().getFullYear()}. {t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}</p>
-        <div className="footer-social">
-          <motion.a 
-            href="#" 
-            aria-label="LinkedIn"
-            whileHover={{ scale: 1.2, rotate: 5 }}
-          >
-            <Linkedin size={18} />
-          </motion.a>
-          <motion.a 
-            href="#" 
-            aria-label="Twitter"
-            whileHover={{ scale: 1.2, rotate: 5 }}
-          >
-            <Twitter size={18} />
-          </motion.a>
-          <motion.a 
-            href="#" 
-            aria-label="Facebook"
-            whileHover={{ scale: 1.2, rotate: 5 }}
-          >
-            <Facebook size={18} />
-          </motion.a>
-        </div>
-      </motion.div>
     </footer>
   );
 };
