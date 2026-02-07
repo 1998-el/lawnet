@@ -5,6 +5,7 @@ import {
   Clock, 
   Video, 
   Building, 
+  Phone,
   ChevronLeft,
   ChevronRight,
   Star,
