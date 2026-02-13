@@ -6,12 +6,14 @@ import {
   Phone,
   Mail,
   Menu,
-  X
+  X,
+  LogIn,
+  UserPlus
 } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -30,6 +32,16 @@ const Navbar = () => {
             </a>
           </div>
           <div className="top-bar-actions">
+            <div className="auth-buttons">
+              <a href="/login" className="auth-btn login-btn">
+                <LogIn size={14} className="icon" />
+                <span className="label">{language === 'fr' ? 'Connexion' : 'Login'}</span>
+              </a>
+              <a href="/register" className="auth-btn register-btn">
+                <UserPlus size={14} className="icon" />
+                <span className="label">{language === 'fr' ? 'Inscription' : 'Register'}</span>
+              </a>
+            </div>
             <div className="language-toggle">
               <button
                 className={`lang-btn ${language === 'fr' ? 'active' : ''}`}

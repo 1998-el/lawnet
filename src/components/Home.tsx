@@ -19,6 +19,45 @@ import './Home.css';
 
 const Home = () => {
 
+  const features = [
+    {
+      id: 1,
+      title: "Verified Lawyers",
+      description: "All lawyers on our platform are thoroughly vetted and verified for credentials.",
+      image: "/assets/129364.jpg"
+    },
+    {
+      id: 2,
+      title: "Honest Reviews",
+      description: "Real reviews from verified clients to help you make informed decisions.",
+      image: "/assets/droit.jpg"
+    },
+    {
+      id: 3,
+      title: "Easy Scheduling",
+      description: "Book appointments that fit your schedule with instant confirmation.",
+      image: "/assets/devis.jpg"
+    },
+    {
+      id: 4,
+      title: "Secure Messaging",
+      description: "Communicate safely with your lawyer through encrypted messaging.",
+      image: "/assets/ticket.jpg"
+    },
+    {
+      id: 5,
+      title: "24/7 Availability",
+      description: "Access legal help anytime with our round-the-clock platform support.",
+      image: "/assets/services.jpg"
+    },
+    {
+      id: 6,
+      title: "Transparent Pricing",
+      description: "Clear fee structures with no hidden costs or surprises.",
+      image: "/assets/banner_2.jpg"
+    }
+  ];
+
   return (
     <main className="home">
       {/* Hero Section - Standalone Component */}
@@ -107,48 +146,15 @@ const Home = () => {
           <p className="section-subtitle">The most trusted platform for legal assistance</p>
           
           <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">
-                <Shield size={24} />
+            {features.map((feature) => (
+              <div className="feature-card" key={feature.id}>
+                <div className="feature-image">
+                  <img src={feature.image} alt={feature.title} />
+                </div>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
               </div>
-              <h3>Verified Lawyers</h3>
-              <p>All lawyers on our platform are thoroughly vetted and verified for credentials.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <Star size={24} />
-              </div>
-              <h3>Honest Reviews</h3>
-              <p>Real reviews from verified clients to help you make informed decisions.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <Calendar size={24} />
-              </div>
-              <h3>Easy Scheduling</h3>
-              <p>Book appointments that fit your schedule with instant confirmation.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <MessageSquare size={24} />
-              </div>
-              <h3>Secure Messaging</h3>
-              <p>Communicate safely with your lawyer through encrypted messaging.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <Clock size={24} />
-              </div>
-              <h3>24/7 Availability</h3>
-              <p>Access legal help anytime with our round-the-clock platform support.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <Shield size={24} />
-              </div>
-              <h3>Transparent Pricing</h3>
-              <p>Clear fee structures with no hidden costs or surprises.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -163,7 +169,7 @@ const Home = () => {
             {[1, 2, 3, 4].map((index) => (
               <div className="lawyer-card" key={index}>
                 <div className="lawyer-image">
-                  <img src="/assets/avatar.jpg" alt={`Lawyer ${index}`} />
+                  <img src="https://plus.unsplash.com/premium_photo-1707155465551-0d2b570926d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXZvY2F0JTIwYWZyb3xlbnwwfHwwfHx8MA%3D%3D" alt={`Lawyer ${index}`} />
                 </div>
                 <div className="lawyer-info">
                   <h3>Sarah Johnson</h3>

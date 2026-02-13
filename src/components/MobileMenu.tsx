@@ -7,25 +7,27 @@ import {
   FileText,
   Scale,
   Info,
-  Phone
+  Phone,
+  LogIn,
+  UserPlus
 } from 'lucide-react';
 import './MobileMenu.css';
 
 const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   const handleLanguageChange = (lang: 'fr' | 'en') => {
     setLanguage(lang);
   };
 
   const menuItems = [
-    { href: '/', icon: <Home size={20} />, label: 'Home' },
-    { href: '/lawyers', icon: <Search size={20} />, label: 'Find a Lawyer' },
-    { href: '/domain', icon: <Scale size={20} />, label: 'Practice Areas' },
-    { href: '/about', icon: <Info size={20} />, label: 'About' },
-    { href: '/contact', icon: <Phone size={20} />, label: 'Contact' },
-    { href: '/dashboard', icon: <User size={20} />, label: 'Dashboard' },
-    { href: '/messages', icon: <MessageSquare size={20} />, label: 'Messages' },
+    { href: '/', icon: <Home size={20} />, label: t('nav.home') },
+    { href: '/lawyers', icon: <Search size={20} />, label: t('nav.lawyers') },
+    { href: '/domain', icon: <Scale size={20} />, label: t('services.title') },
+    { href: '/about', icon: <Info size={20} />, label: t('nav.about') },
+    { href: '/contact', icon: <Phone size={20} />, label: t('nav.contact') },
+    { href: '/dashboard', icon: <User size={20} />, label: t('nav.dashboard') },
+    { href: '/messages', icon: <MessageSquare size={20} />, label: t('nav.search') },
   ];
 
   return (
@@ -65,10 +67,10 @@ const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
 
         <div className="mobile-menu-actions">
           <a href="/login" className="btn btn-outline mobile-btn">
-            <User size={18} /> Login
+            <LogIn size={18} /> {language === 'fr' ? 'Connexion' : 'Login'}
           </a>
           <a href="/register" className="btn btn-primary mobile-btn">
-            <FileText size={18} /> Register
+            <UserPlus size={18} /> {language === 'fr' ? 'Inscription' : 'Register'}
           </a>
         </div>
 
