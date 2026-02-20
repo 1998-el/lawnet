@@ -94,15 +94,15 @@ const Footer = () => {
             <ul className="footer-contact">
               <li>
                 <span className="contact-icon"><MapPin size={18} /></span>
-                <span>123 Legal Street, New York, NY 10001</span>
+                <span>Boulevard de la Liberté, Douala, Cameroun</span>
               </li>
               <li>
                 <span className="contact-icon"><Phone size={18} /></span>
-                <a href="tel:+1-800-LAWNET">1-800-LAWNET</a>
+                <a href="tel:+237-6XX-XXX-XXX">+237 6XX XXX XXX</a>
               </li>
               <li>
                 <span className="contact-icon"><Mail size={18} /></span>
-                <a href="mailto:info@lawnet.com">info@lawnet.com</a>
+                <a href="mailto:contact@lawnet.cm">contact@lawnet.cm</a>
               </li>
             </ul>
             <div className="footer-social">

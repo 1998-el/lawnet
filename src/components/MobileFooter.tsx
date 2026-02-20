@@ -58,25 +58,25 @@ const MobileFooter = () => {
         viewport={{ once: false }}
         variants={staggerContainer}
       >
-        <motion.a href="tel:+1-800-LAWNET" className="mobile-contact-card" variants={fadeInUp}>
+        <motion.a href="tel:+237-6XX-XXX-XXX" className="mobile-contact-card" variants={fadeInUp}>
           <div className="mobile-contact-icon"><Phone size={20} /></div>
           <div className="mobile-contact-info">
             <span className="mobile-contact-label">Call Us</span>
-            <span className="mobile-contact-value">1-800-LAWNET</span>
+            <span className="mobile-contact-value">+237 6XX XXX XXX</span>
           </div>
         </motion.a>
-        <motion.a href="mailto:info@lawnet.com" className="mobile-contact-card" variants={fadeInUp}>
+        <motion.a href="mailto:contact@lawnet.cm" className="mobile-contact-card" variants={fadeInUp}>
           <div className="mobile-contact-icon"><Mail size={20} /></div>
           <div className="mobile-contact-info">
             <span className="mobile-contact-label">Email Us</span>
-            <span className="mobile-contact-value">info@lawnet.com</span>
+            <span className="mobile-contact-value">contact@lawnet.cm</span>
           </div>
         </motion.a>
         <motion.div className="mobile-contact-card" variants={fadeInUp}>
           <div className="mobile-contact-icon"><MapPin size={20} /></div>
           <div className="mobile-contact-info">
             <span className="mobile-contact-label">Visit Us</span>
-            <span className="mobile-contact-value">123 Legal Street, New York, NY 10001</span>
+            <span className="mobile-contact-value">Boulevard de la Liberté, Douala, Cameroun</span>
           </div>
         </motion.div>
       </motion.div>

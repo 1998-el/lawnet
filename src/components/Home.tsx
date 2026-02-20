@@ -14,6 +14,7 @@ import {
   Eye
 } from 'lucide-react';
 import HeroBanner from './HeroBanner';
+import lawyersData from '../data/lawyers.json';
 import './Home.css';
 
 const Home = () => {
@@ -165,23 +166,19 @@ const Home = () => {
           <p className="section-subtitle">Top-rated lawyers ready to help you</p>
           
           <div className="lawyers-grid">
-            {[1, 2, 3, 4].map((index) => (
-              <div className="lawyer-card" key={index}>
+            {lawyersData.slice(0, 4).map((lawyer) => (
+              <div className="lawyer-card" key={lawyer.id}>
                 <div className="lawyer-image">
-                  <img src="https://plus.unsplash.com/premium_photo-1707155465551-0d2b570926d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXZvY2F0JTIwYWZyb3xlbnwwfHwwfHx8MA%3D%3D" alt={`Lawyer ${index}`} />
+                  <img src={lawyer.image} alt={lawyer.name} />
                 </div>
                 <div className="lawyer-info">
-                  <h3>Sarah Johnson</h3>
-                  <p className="lawyer-specialty">Criminal Defense Attorney</p>
+                  <h3>{lawyer.name}</h3>
+                  <p className="lawyer-specialty">{lawyer.specialty}</p>
                   <div className="lawyer-rating">
                     <Star size={14} className="star filled" />
-                    <Star size={14} className="star filled" />
-                    <Star size={14} className="star filled" />
-                    <Star size={14} className="star filled" />
-                    <Star size={14} className="star filled" />
-                    <span>(127)</span>
+                    <span>({lawyer.reviews})</span>
                   </div>
-                  <p className="lawyer-location"><MapPin size={12} /> New York, NY</p>
+                  <p className="lawyer-location"><MapPin size={12} /> {lawyer.location}</p>
                   <div className="lawyer-actions">
                     <button className="btn-primary"><Eye size={14} /> View</button>
                     <button className="btn-outline"><Calendar size={14} /> Book</button>
