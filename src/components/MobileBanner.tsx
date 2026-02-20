@@ -20,8 +20,19 @@ const MobileBanner = () => {
           </a>
         </div>
 
-        {/* Language Toggle */}
-        <div className="mobile-lang-actions">
+        {/* Language Toggle & Auth - Same Line */}
+        <div className="mobile-banner-actions">
+          {/* Login/Register Buttons */}
+          <div className="mobile-auth-buttons">
+            <a href="/login" className="mobile-auth-btn login">
+              Login
+            </a>
+            <a href="/register" className="mobile-auth-btn register">
+              Register
+            </a>
+          </div>
+
+          {/* Language Toggle */}
           <div className="mobile-language-toggle">
             <button
               className={`mobile-lang-btn ${language === 'fr' ? 'active' : ''}`}

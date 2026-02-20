@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Mail, Lock, ArrowRight, AlertCircle, CheckCircle2, User, ShieldCheck, Users, Clock, ArrowLeft } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, ArrowLeft, ShieldCheck, Users, Clock } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import './Login.css';
 
@@ -89,15 +89,15 @@ const Login = () => {
 
   const features = [
     {
-      icon: <ShieldCheck size={20} />,
+      icon: <ShieldCheck size={18} />,
       text: language === 'fr' ? 'Sécurité garantie' : 'Secure Platform'
     },
     {
-      icon: <Users size={20} />,
+      icon: <Users size={18} />,
       text: language === 'fr' ? '10 000+ utilisateurs' : '10,000+ Users'
     },
     {
-      icon: <Clock size={20} />,
+      icon: <Clock size={18} />,
       text: language === 'fr' ? 'Service 24/7' : '24/7 Support'
     }
   ];
@@ -106,9 +106,10 @@ const Login = () => {
     <div className="login-container">
       {/* Left Side - Login Form */}
       <div className="login-form-section">
-        <div className="login-logo">
-          LAW<span>NET</span>
-        </div>
+        <Link to="/" className="login-back">
+          <ArrowLeft size={16} />
+          {language === 'fr' ? 'Retour' : 'Back'}
+        </Link>
 
         <div className="login-form-wrapper">
           <div className="login-form-header">
@@ -118,24 +119,14 @@ const Login = () => {
 
           {showSuccess && (
             <div className="success-message">
-              <CheckCircle2 size={20} />
+              <span>✓</span>
               <span>{t('login.success')}</span>
             </div>
           )}
 
           {errors.general && (
-            <div className="form-error" style={{
-              backgroundColor: '#fef2f2',
-              border: '1px solid #fecaca',
-              borderRadius: '8px',
-              padding: '1rem',
-              marginBottom: '1.5rem',
-              color: '#dc2626',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem'
-            }}>
-              <AlertCircle size={20} />
+            <div className="form-error">
+              <span>⚠</span>
               <span>{errors.general}</span>
             </div>
           )}
@@ -143,7 +134,7 @@ const Login = () => {
           <form onSubmit={handleSubmit} className="login-form">
             <div className="form-group">
               <label htmlFor="email">
-                <Mail size={16} />
+                <Mail size={14} />
                 {t('login.email')}
                 <span className="required">*</span>
               </label>
@@ -160,7 +151,7 @@ const Login = () => {
               />
               {errors.email && (
                 <div id="email-error" className="form-error">
-                  <AlertCircle size={14} />
+                  <span>•</span>
                   {errors.email}
                 </div>
               )}
@@ -168,7 +159,7 @@ const Login = () => {
 
             <div className="form-group">
               <label htmlFor="password">
-                <Lock size={16} />
+                <Lock size={14} />
                 {t('login.password')}
                 <span className="required">*</span>
               </label>
@@ -190,12 +181,12 @@ const Login = () => {
                   className="password-toggle"
                   aria-label={showPassword ? t('login.password.hide') : t('login.password.show')}
                 >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
               {errors.password && (
                 <div id="password-error" className="form-error">
-                  <AlertCircle size={14} />
+                  <span>•</span>
                   {errors.password}
                 </div>
               )}
@@ -233,7 +224,7 @@ const Login = () => {
 
           <div className="social-login">
             <div className="social-login-title">
-              <span>{t('login.or')}</span>
+              {t('login.or')}
             </div>
             <div className="social-login-buttons">
               <button
@@ -251,6 +242,10 @@ const Login = () => {
 
       {/* Right Side - Image */}
       <div className="login-image-section">
+        <img 
+          src="/assets/droit.jpg" 
+          alt={language === 'fr' ? 'Justice' : 'Justice'}
+        />
         <div className="login-image-content">
           <h2>{language === 'fr' ? 'Bienvenue sur LAWNET' : 'Welcome to LAWNET'}</h2>
           <p>{language === 'fr' ? 'Votre plateforme de confiance pour accéder à des services juridiques de qualité' : 'Your trusted platform for accessing quality legal services'}</p>

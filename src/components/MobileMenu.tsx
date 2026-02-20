@@ -4,7 +4,6 @@ import {
   User, 
   MessageSquare, 
   Home,
-  FileText,
   Scale,
   Info,
   Phone,
@@ -13,22 +12,42 @@ import {
 } from 'lucide-react';
 import './MobileMenu.css';
 
-const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+interface NavLink {
+  path: string;
+  label: string;
+  type: 'link' | 'button';
+}
+
+interface MobileMenuProps {
+  id?: string;
+  isOpen: boolean;
+  onClose: () => void;
+  links?: NavLink[];
+}
+
+const MobileMenu = ({ id, isOpen, onClose, links }: MobileMenuProps) => {
   const { language, setLanguage, t } = useLanguage();
 
   const handleLanguageChange = (lang: 'fr' | 'en') => {
     setLanguage(lang);
   };
 
-  const menuItems = [
-    { href: '/', icon: <Home size={20} />, label: t('nav.home') },
-    { href: '/lawyers', icon: <Search size={20} />, label: t('nav.lawyers') },
-    { href: '/domain', icon: <Scale size={20} />, label: t('services.title') },
-    { href: '/about', icon: <Info size={20} />, label: t('nav.about') },
-    { href: '/contact', icon: <Phone size={20} />, label: t('nav.contact') },
-    { href: '/dashboard', icon: <User size={20} />, label: t('nav.dashboard') },
-    { href: '/messages', icon: <MessageSquare size={20} />, label: t('nav.search') },
-  ];
+  // Use provided links or fall back to default menu items
+  const menuItems = links 
+    ? links.map(link => ({
+        href: link.path,
+        icon: link.type === 'button' ? <Phone size={20} /> : <Home size={20} />,
+        label: link.label
+      }))
+    : [
+        { href: '/', icon: <Home size={20} />, label: t('nav.home') },
+        { href: '/lawyers', icon: <Search size={20} />, label: t('nav.lawyers') },
+        { href: '/domain', icon: <Scale size={20} />, label: t('services.title') },
+        { href: '/about', icon: <Info size={20} />, label: t('nav.about') },
+        { href: '/contact', icon: <Phone size={20} />, label: t('nav.contact') },
+        { href: '/dashboard', icon: <User size={20} />, label: t('nav.dashboard') },
+        { href: '/messages', icon: <MessageSquare size={20} />, label: t('nav.search') },
+      ];
 
   return (
     <>
@@ -39,13 +58,17 @@ const MobileMenu = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
       />
       
       {/* Mobile Navigation */}
-      <nav className={`mobile-nav ${isOpen ? 'open' : ''}`}>
+      <nav 
+        id={id}
+        className={`mobile-nav ${isOpen ? 'open' : ''}`}
+        aria-hidden={!isOpen}
+      >
         <div className="mobile-nav-header">
           <div className="mobile-logo">
             <Scale size={28} />
             <span>LAW<span>NET</span></span>
           </div>
-          <button className="close-menu" onClick={onClose}>
+          <button className="close-menu" onClick={onClose} aria-label="Close menu">
             ×
           </button>
         </div>

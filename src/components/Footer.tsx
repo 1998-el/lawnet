@@ -6,7 +6,6 @@ import {
   Facebook,
   Twitter,
   Instagram,
-  Scale,
   Shield,
   Clock,
   CheckCircle
@@ -39,8 +38,11 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="footer-brand">
             <div className="footer-logo">
-              <Scale size={32} />
-              <span>LAW<span>NET</span></span>
+              <img 
+                src="/assets/logo/logo.jpeg" 
+                alt="LAWNET" 
+                style={{ height: '40px', width: 'auto' }}
+              />
             </div>
             <p className="footer-description">
               Connecting people with qualified lawyers for accessible, transparent legal assistance.

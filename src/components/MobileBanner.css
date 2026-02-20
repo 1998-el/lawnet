@@ -1,9 +1,7 @@
 /* Mobile Mini Banner */
 .mobile-banner {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 12px 0;
-  display: none;
+  background: #0a2545;
+  padding: 10px 0;
 }
 
 .mobile-banner-container {
@@ -26,38 +24,74 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #1a1a1a;
+  color: #ffffff;
   font-size: 14px;
   white-space: nowrap;
   transition: color 0.3s ease;
 }
 
 .mobile-contact-item:hover {
-  color: #c9a227;
+  color: #d4d4d4;
 }
 
 .contact-icon {
   width: 16px;
   height: 16px;
-  color: #1a1a1a;
+  color: #ffffff;
   flex-shrink: 0;
 }
 
 .mobile-contact-item:hover .contact-icon {
-  color: #c9a227;
+  color: #d4d4d4;
 }
 
 .contact-text {
   font-weight: 500;
 }
 
-/* Mobile Language Actions */
-.mobile-lang-actions {
+/* Mobile Banner Actions - Same Line */
+.mobile-banner-actions {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
+/* Mobile Auth Buttons */
+.mobile-auth-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.mobile-auth-btn {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.mobile-auth-btn.login {
+  background: #0a2545;
+  color: #ffffff;
+}
+
+.mobile-auth-btn.login:hover {
+  background: #10367D;
+  color: #ffffff;
+}
+
+.mobile-auth-btn.register {
+  background: #10367D;
+  color: #ffffff;
+}
+
+.mobile-auth-btn.register:hover {
+  background: #0a2545;
+  color: #ffffff;
+}
+
+/* Mobile Language Toggle */
 .mobile-language-toggle {
   display: flex;
   gap: 4px;
@@ -65,27 +99,27 @@
 
 .mobile-lang-btn {
   background: transparent;
-  border: 1px solid #e5e5e5;
-  color: #666;
+  border: 1px solid #3b5998;
+  color: #a3a3a3;
   padding: 8px 14px;
   border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
   font-size: 12px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .mobile-lang-btn:hover,
 .mobile-lang-btn.active {
-  background: #1a1a1a;
+  background: #0a2545;
   color: #ffffff;
-  border-color: #1a1a1a;
+  border-color: #0a2545;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .mobile-banner {
-    display: block;
+    display: none;
   }
   
   .mobile-banner-container {
@@ -106,6 +140,20 @@
     width: 18px;
     height: 18px;
   }
+  
+  .mobile-auth-buttons {
+    gap: 6px;
+  }
+  
+  .mobile-auth-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  
+  .mobile-lang-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -121,8 +169,17 @@
     font-size: 12px;
   }
   
+  .mobile-banner-actions {
+    gap: 8px;
+  }
+  
+  .mobile-auth-btn {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+  
   .mobile-lang-btn {
-    padding: 6px 10px;
-    font-size: 11px;
+    padding: 5px 8px;
+    font-size: 10px;
   }
 }

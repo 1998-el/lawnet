@@ -3,7 +3,7 @@
    ============================================ */
 
 .footer {
-  background: #1a1a1a;
+  background: #03162e;
   color: #888;
   border-top: none;
 }
@@ -44,6 +44,12 @@
   letter-spacing: -0.02em;
 }
 
+.footer-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
 .footer-logo-icon {
   display: flex;
   align-items: center;
@@ -52,7 +58,7 @@
   height: 36px;
   background: #fff;
   border-radius: var(--radius-md);
-  color: #1a1a1a;
+  color: #ffffff;
 }
 
 .footer-logo span {
@@ -187,9 +193,9 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: #252525;
+  background: #e6e6e6;
   border-radius: var(--radius-md);
-  color: #888;
+  color: #696969;
   transition: all var(--transition-fast);
 }
 
@@ -239,11 +245,15 @@
   padding: var(--space-3) var(--space-4);
   border: 1px solid #333;
   border-radius: var(--radius-md);
-  background: #252525;
-  color: #fff;
+  background: #f4f4f4;
+  color: #252525;
   font-size: 0.875rem;
   width: 240px;
   transition: all var(--transition-fast);
+
+}
+.btn-primary{
+  background-color: #10367D !important;
 }
 
 .newsletter-form input::placeholder {
@@ -372,7 +382,7 @@
 @media (max-width: 768px) {
   .mobile-footer {
     display: block;
-    background: #1a1a1a;
+    background: #10367D;
     padding: var(--space-4);
     border-top: none;
   }

@@ -11,8 +11,7 @@ import {
   FileText,
   Scale,
   MapPin,
-  Eye,
-  Clock
+  Eye
 } from 'lucide-react';
 import HeroBanner from './HeroBanner';
 import './Home.css';
@@ -269,20 +268,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
-        <div className="section-container">
-          <h2>Ready to Find Your Legal Expert?</h2>
-          <p>Join thousands of satisfied clients who found the right lawyer through LAWNET</p>
-          <div className="cta-buttons">
-            <a href="/lawyers" className="btn-primary">
-              Search for Lawyers
-            </a>
-            <a href="/contact" className="btn-secondary">
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </section>
+  
     </main>
   );
 };

@@ -9,10 +9,10 @@
    * Clean, Modern, Professional
    */
   
-  /* Primary - Black: Authority & Modernity */
-  --primary: #1a1a1a;
-  --primary-light: #333;
-  --primary-dark: #000;
+  /* Primary - Blue: Trust & Professionalism */
+  --primary: #0a2545;
+  --primary-light: #10367D;
+  --primary-dark: #0a2545;
   
   /* Secondary - Gray: Balance & Sophistication */
   --gray-50: #fafafa;
@@ -26,10 +26,10 @@
   --gray-800: #262626;
   --gray-900: #171717;
   
-  /* Accent - Gold: Subtle Excellence */
-  --accent: #1a1a1a;
-  --accent-light: #404040;
-  --accent-gold: #1a1a1a;
+  /* Accent - Blue: Subtle Excellence */
+  --accent: #0a2545;
+  --accent-light: #10367D;
+  --accent-gold: #0a2545;
   
   /* Neutrals */
   --white: #ffffff;

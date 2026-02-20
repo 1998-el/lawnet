@@ -8,7 +8,7 @@
 
 /* Header */
 .domain-header {
-  background: #1a1a1a;
+  background: #0a2545;
   padding: 64px 0 72px;
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
@@ -167,7 +167,7 @@
 
 /* CTA Section */
 .domain-cta {
-  background: #1a1a1a;
+  background: #0a2545;
   padding: 72px 0;
   text-align: center;
 }

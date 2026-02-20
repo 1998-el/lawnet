@@ -13,123 +13,23 @@ import {
 } from 'lucide-react';
 import './LawyerSearch.css';
 
-// Mock data for lawyers
-const mockLawyers = [
-  {
-    id: 1,
-    name: 'Sarah Johnson',
-    specialty: 'Criminal Defense Attorney',
-    location: 'New York, NY',
-    rating: 4.9,
-    reviews: 127,
-    experience: '15 years',
-    hourlyRate: 350,
-    availability: 'Available Today',
-    languages: ['English', 'Spanish'],
-    education: 'Harvard Law School',
-    bio: 'Experienced criminal defense attorney with a track record of successful case outcomes. Dedicated to protecting client rights and providing aggressive legal representation.',
-    image: '/assets/avatar.jpg',
-    verified: true,
-    featured: true
-  },
-  {
-    id: 2,
-    name: 'Michael Chen',
-    specialty: 'Family Law Specialist',
-    location: 'Los Angeles, CA',
-    rating: 4.8,
-    reviews: 98,
-    experience: '12 years',
-    hourlyRate: 300,
-    availability: 'Next Available Tomorrow',
-    languages: ['English', 'Mandarin'],
-    education: 'Stanford Law School',
-    bio: 'Compassionate family law attorney specializing in divorce, custody disputes, and adoption cases. Committed to finding amicable solutions.',
-    image: '/assets/avatar.png',
-    verified: true,
-    featured: true
-  },
-  {
-    id: 3,
-    name: 'Emily Rodriguez',
-    specialty: 'Corporate Law Attorney',
-    location: 'Chicago, IL',
-    rating: 4.7,
-    reviews: 156,
-    experience: '18 years',
-    hourlyRate: 450,
-    availability: 'Available Today',
-    languages: ['English', 'Spanish', 'Portuguese'],
-    education: 'Yale Law School',
-    bio: 'Senior corporate lawyer with expertise in business formation, contracts, and mergers & acquisitions. Trusted advisor to Fortune 500 companies.',
-    image: '/assets/avatar.jpg',
-    verified: true,
-    featured: false
-  },
-  {
-    id: 4,
-    name: 'David Thompson',
-    specialty: 'Personal Injury Lawyer',
-    location: 'Houston, TX',
-    rating: 4.9,
-    reviews: 203,
-    experience: '20 years',
-    hourlyRate: 275,
-    availability: 'Available Today',
-    languages: ['English'],
-    education: 'University of Texas Law School',
-    bio: 'Passionate personal injury advocate fighting for maximum compensation for accident victims. No win, no fee guarantee.',
-    image: '/assets/avatar.jpg',
-    verified: true,
-    featured: true
-  },
-  {
-    id: 5,
-    name: 'Amanda Foster',
-    specialty: 'Immigration Attorney',
-    location: 'Miami, FL',
-    rating: 4.8,
-    reviews: 89,
-    experience: '10 years',
-    hourlyRate: 250,
-    availability: 'Next Available Monday',
-    languages: ['English', 'Spanish', 'French'],
-    education: 'Georgetown Law',
-    bio: 'Immigration expert helping individuals and families navigate complex visa and citizenship processes. Multilingual team support.',
-    image: '/assets/avatar.png',
-    verified: true,
-    featured: false
-  },
-  {
-    id: 6,
-    name: 'Robert Williams',
-    specialty: 'Real Estate Attorney',
-    location: 'Phoenix, AZ',
-    rating: 4.6,
-    reviews: 67,
-    experience: '14 years',
-    hourlyRate: 225,
-    availability: 'Available Today',
-    languages: ['English'],
-    education: 'Arizona State Law',
-    bio: 'Real estate specialist handling residential and commercial property transactions, leases, and disputes.',
-    image: '/assets/avatar.jpg',
-    verified: true,
-    featured: false
-  }
-];
+// Import lawyer data from JSON file
+import lawyersData from '../data/lawyers.json';
+
+// Use the imported data
+const mockLawyers = lawyersData;
 
 const practiceAreas = [
-  'Criminal Defense',
-  'Family Law',
-  'Corporate Law',
-  'Personal Injury',
-  'Immigration',
-  'Real Estate',
-  'Estate Planning',
-  'Employment Law',
-  'Bankruptcy',
-  'Intellectual Property'
+  'Droit Pénal',
+  'Droit de la Famille',
+  'Droit des Affaires',
+  'Droit Immobilier',
+  'Droit du Travail',
+  'Droit des Sociétés',
+  'Droit Commercial',
+  'Droit Fiscal',
+  'Droit Bancaire',
+  'Propriété Intellectuelle'
 ];
 
 const LawyerSearch = () => {
@@ -137,7 +37,7 @@ const LawyerSearch = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedArea, setSelectedArea] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 500]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 100000]);
   const [rating, setRating] = useState(0);
   const [availability, setAvailability] = useState('');
   const [showFilters, setShowFilters] = useState(false);
@@ -245,15 +145,15 @@ const LawyerSearch = () => {
                 <input 
                   type="range" 
                   min="0" 
-                  max="500" 
+                  max="100000" 
                   value={priceRange[1]}
                   onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
                 />
-                <div className="range-fill" style={{ width: `${(priceRange[1] / 500) * 100}%` }}></div>
+                <div className="range-fill" style={{ width: `${(priceRange[1] / 100000) * 100}%` }}></div>
               </div>
               <div className="range-labels">
-                <span>$0</span>
-                <span>$500</span>
+                <span>0 CFA</span>
+                <span>100000 CFA</span>
               </div>
             </div>
 
@@ -291,7 +191,7 @@ const LawyerSearch = () => {
               onClick={() => {
                 setSelectedArea('');
                 setSelectedLocation('');
-                setPriceRange([0, 500]);
+                setPriceRange([0, 100000]);
                 setRating(0);
                 setAvailability('');
               }}
