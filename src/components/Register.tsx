@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import './Register.css';
 
 const Register = () => {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({

@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import './Login.css';
 
 const Login = () => {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
