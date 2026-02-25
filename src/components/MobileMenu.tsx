@@ -90,10 +90,10 @@ const MobileMenu = ({ id, isOpen, onClose, links }: MobileMenuProps) => {
 
         <div className="mobile-menu-actions">
           <a href="/login" className="btn btn-outline mobile-btn">
-            <LogIn size={18} /> {language === 'fr' ? 'Connexion' : 'Login'}
+            <LogIn size={18} /> Login
           </a>
           <a href="/register" className="btn btn-primary mobile-btn">
-            <UserPlus size={18} /> {language === 'fr' ? 'Inscription' : 'Register'}
+            <UserPlus size={18} /> Register
           </a>
         </div>
 

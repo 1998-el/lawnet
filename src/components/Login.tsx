@@ -90,15 +90,15 @@ const Login = () => {
   const features = [
     {
       icon: <ShieldCheck size={18} />,
-      text: language === 'fr' ? 'Sécurité garantie' : 'Secure Platform'
+      text: 'Secure Platform'
     },
     {
       icon: <Users size={18} />,
-      text: language === 'fr' ? '10 000+ utilisateurs' : '10,000+ Users'
+      text: '10,000+ Users'
     },
     {
       icon: <Clock size={18} />,
-      text: language === 'fr' ? 'Service 24/7' : '24/7 Support'
+      text: '24/7 Support'
     }
   ];
 
@@ -108,7 +108,7 @@ const Login = () => {
       <div className="login-form-section">
         <Link to="/" className="login-back">
           <ArrowLeft size={16} />
-          {language === 'fr' ? 'Retour' : 'Back'}
+          Back
         </Link>
 
         <div className="login-form-wrapper">
@@ -244,11 +244,11 @@ const Login = () => {
       <div className="login-image-section">
         <img 
           src="/assets/droit.jpg" 
-          alt={language === 'fr' ? 'Justice' : 'Justice'}
+          alt="Justice"
         />
         <div className="login-image-content">
-          <h2>{language === 'fr' ? 'Bienvenue sur LAWNET' : 'Welcome to LAWNET'}</h2>
-          <p>{language === 'fr' ? 'Votre plateforme de confiance pour accéder à des services juridiques de qualité' : 'Your trusted platform for accessing quality legal services'}</p>
+          <h2>Welcome to LAWNET</h2>
+          <p>Your trusted platform for accessing quality legal services</p>
           <ul className="login-features">
             {features.map((feature, index) => (
               <li key={index} className="login-feature">

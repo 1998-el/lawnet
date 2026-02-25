@@ -20,16 +20,16 @@ import lawyersData from '../data/lawyers.json';
 const mockLawyers = lawyersData;
 
 const practiceAreas = [
-  'Droit Pénal',
-  'Droit de la Famille',
-  'Droit des Affaires',
-  'Droit Immobilier',
-  'Droit du Travail',
-  'Droit des Sociétés',
-  'Droit Commercial',
-  'Droit Fiscal',
-  'Droit Bancaire',
-  'Propriété Intellectuelle'
+  'Criminal Law',
+  'Family Law',
+  'Business Law',
+  'Real Estate Law',
+  'Labor Law',
+  'Corporate Law',
+  'Commercial Law',
+  'Tax Law',
+  'Banking Law',
+  'Intellectual Property'
 ];
 
 const LawyerSearch = () => {
@@ -152,8 +152,8 @@ const LawyerSearch = () => {
                 <div className="range-fill" style={{ width: `${(priceRange[1] / 100000) * 100}%` }}></div>
               </div>
               <div className="range-labels">
-                <span>0 CFA</span>
-                <span>100000 CFA</span>
+                <span>$0</span>
+                <span>$100,000</span>
               </div>
             </div>
 

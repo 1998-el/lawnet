@@ -8,8 +8,8 @@ interface NavbarTopBarProps {
 
 const NavbarTopBar = memo(({ language, onLanguageChange }: NavbarTopBarProps) => {
   const translations = {
-    login: language === 'fr' ? 'Connexion' : 'Login',
-    register: language === 'fr' ? 'Inscription' : 'Register'
+    login: 'Login',
+    register: 'Register'
   };
 
   return (

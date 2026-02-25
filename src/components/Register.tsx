@@ -24,9 +24,9 @@ const Register = () => {
   const [passwordStrength, setPasswordStrength] = useState<'weak' | 'medium' | 'strong' | ''>('');
 
   const steps = [
-    { number: 1, label: language === 'fr' ? 'Info' : 'Info' },
-    { number: 2, label: language === 'fr' ? 'Mot de passe' : 'Password' },
-    { number: 3, label: language === 'fr' ? 'Confirmation' : 'Confirm' }
+    { number: 1, label: 'Info' },
+    { number: 2, label: 'Password' },
+    { number: 3, label: 'Confirm' }
   ];
 
   const validateStep = (step: number) => {
@@ -162,7 +162,7 @@ const Register = () => {
       <div className="register-form-section">
         <Link to="/" className="register-back">
           <ArrowLeft size={16} />
-          {language === 'fr' ? 'Retour' : 'Back'}
+          Back
         </Link>
 
         <div className="register-form-wrapper">
@@ -375,7 +375,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-summary">
-                  <h4>{language === 'fr' ? 'Récapitulatif' : 'Summary'}</h4>
+                  <h4>Summary</h4>
                   <div className="summary-item">
                     <span className="summary-label">{t('register.name')}:</span>
                     <span className="summary-value">{formData.name}</span>
@@ -401,7 +401,7 @@ const Register = () => {
                   onClick={handleBack}
                 >
                   <ArrowLeft size={16} />
-                  {language === 'fr' ? 'Retour' : 'Back'}
+                  Back
                 </button>
               )}
               
@@ -411,7 +411,7 @@ const Register = () => {
                   className="btn-next"
                   onClick={handleNext}
                 >
-                  {language === 'fr' ? 'Suivant' : 'Next'}
+                  Next
                   <ArrowRight size={16} />
                 </button>
               ) : (
@@ -437,11 +437,11 @@ const Register = () => {
       <div className="register-image-section">
         <img 
           src="/assets/droit.jpg" 
-          alt={language === 'fr' ? 'Justice' : 'Justice'}
+          alt="Justice"
         />
         <div className="register-image-content">
-          <h2>{language === 'fr' ? 'Rejoignez LAWNET' : 'Join LAWNET'}</h2>
-          <p>{language === 'fr' ? 'Créez votre compte en quelques étapes' : 'Create your account in a few steps'}</p>
+          <h2>Join LAWNET</h2>
+          <p>Create your account in a few steps</p>
         </div>
       </div>
     </div>
