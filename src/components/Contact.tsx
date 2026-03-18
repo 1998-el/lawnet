@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, MessageSquare } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import './Contact.css';
 
 const Contact = () => {
+  const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +13,106 @@ const Contact = () => {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+
+  const content = language === 'fr' ? {
+    heroTitle: 'Contactez-nous',
+    heroSubtitle: 'Des questions ? Nous sommes là pour vous aider à trouver la bonne solution juridique.',
+    sendMessage: 'Envoyez-nous un message',
+    sendMessageSubtitle: 'Remplissez le formulaire ci-dessous et nous vous répondrons dès que possible.',
+    fullName: 'Nom complet *',
+    emailAddress: 'Adresse email *',
+    phoneNumber: 'Numéro de téléphone',
+    subject: 'Sujet *',
+    selectSubject: 'Sélectionner un sujet',
+    general: 'Demande générale',
+    support: 'Support technique',
+    lawyer: 'Trouver un avocat',
+    billing: 'Question de facturation',
+    partnership: 'Opportunité de partenariat',
+    other: 'Autre',
+    message: 'Message *',
+    messagePlaceholder: 'Parlez-nous de vos besoins juridiques...',
+    sendBtn: 'Envoyer le message',
+    thankYou: 'Merci de nous avoir contactés !',
+    thankYouDesc: 'Nous avons reçu votre message et répondrons dans les 24 heures.',
+    sendAnother: 'Envoyer un autre message',
+    getInTouch: 'Contactez-nous',
+    getInTouchSubtitle: 'Préféréz parler ? Voici toutes les façons de nous joindre.',
+    phone: 'Téléphone',
+    phoneDetails: ['+237 6XX XXX XXX', '+237 2XX XXX XXX'],
+    phoneSubtitle: 'Lun-Ven 8h-18h',
+    email: 'Email',
+    emailDetails: ['info@lawnet.cm', 'support@lawnet.cm'],
+    emailSubtitle: 'Nous répondons sous 24 heures',
+    office: 'Bureau',
+    officeDetails: ['Rue de la Justice', 'Douala, Cameroun'],
+    officeSubtitle: 'Venez sur rendez-vous',
+    hours: 'Horaires',
+    hoursDetails: ['Lundi - Vendredi: 8h-18h', 'Samedi: 9h-13h'],
+    hoursSubtitle: 'Urgence: 24h/24',
+    needImmediate: 'Besoin d\'assistance immédiate ?',
+    needImmediateDesc: 'Notre équipe est disponible pour vous aider à trouver le bon avocat.',
+    browseLawyers: 'Parcourir les avocats',
+    faqTitle: 'Questions fréquemment posées',
+    faqSubtitle: 'Réponses rapides aux questions courantes',
+    faq1Question: 'Comment trouver le bon avocat ?',
+    faq1Answer: 'Parcourez notre annuaire par domaine de pratique, lieu ou recherchez par nom. Lisez les avis, vérifiez les credentials et réservez une consultation.',
+    faq2Question: 'La consultation initiale est-elle gratuite ?',
+    faq2Answer: 'De nombreux avocats offrent des consultations initiales gratuites. Consultez les profils individuels pour leur politique.',
+    faq3Question: 'Comment fonctionne le processus de réservation ?',
+    faq3Answer: 'Sélectionnez un avocat, Choisissez un créneau disponible et complétez la réservation. Vous recevrez une confirmation par email.',
+    faq4Question: 'Puis-je communiquer avec mon avocat en ligne ?',
+    faq4Answer: 'Oui ! Notre système de messagerie sécurisé vous permet de communiquer avec votre avocat via la plateforme.'
+  } : {
+    heroTitle: 'Contact Us',
+    heroSubtitle: 'Have questions? We\'re here to help you find the right legal solution.',
+    sendMessage: 'Send us a Message',
+    sendMessageSubtitle: 'Fill out the form below and we\'ll get back to you as soon as possible.',
+    fullName: 'Full Name *',
+    emailAddress: 'Email Address *',
+    phoneNumber: 'Phone Number',
+    subject: 'Subject *',
+    selectSubject: 'Select a subject',
+    general: 'General Inquiry',
+    support: 'Technical Support',
+    lawyer: 'Find a Lawyer',
+    billing: 'Billing Question',
+    partnership: 'Partnership Opportunity',
+    other: 'Other',
+    message: 'Message *',
+    messagePlaceholder: 'Tell us about your legal needs...',
+    sendBtn: 'Send Message',
+    thankYou: 'Thank you for reaching out!',
+    thankYouDesc: 'We\'ve received your message and will respond within 24 hours.',
+    sendAnother: 'Send Another Message',
+    getInTouch: 'Get in Touch',
+    getInTouchSubtitle: 'Prefer to talk? Here are all the ways you can reach us.',
+    phone: 'Phone',
+    phoneDetails: ['1-800-LAWNET', '+1 (555) 123-4567'],
+    phoneSubtitle: 'Mon-Fri 9am-6pm EST',
+    email: 'Email',
+    emailDetails: ['info@lawnet.com', 'support@lawnet.com'],
+    emailSubtitle: 'We respond within 24 hours',
+    office: 'Office',
+    officeDetails: ['123 Legal Street', 'New York, NY 10001'],
+    officeSubtitle: 'Visit us by appointment',
+    hours: 'Hours',
+    hoursDetails: ['Monday - Friday: 9am-6pm', 'Saturday: 10am-4pm'],
+    hoursSubtitle: 'Emergency: 24/7',
+    needImmediate: 'Need immediate assistance?',
+    needImmediateDesc: 'Our team is available to help you find the right lawyer for your needs.',
+    browseLawyers: 'Browse Lawyers',
+    faqTitle: 'Frequently Asked Questions',
+    faqSubtitle: 'Quick answers to common questions',
+    faq1Question: 'How do I find the right lawyer?',
+    faq1Answer: 'Browse our directory by practice area, location, or search by name. Read reviews, check credentials, and book a consultation.',
+    faq2Question: 'Is the initial consultation free?',
+    faq2Answer: 'Many lawyers offer free initial consultations. Check individual lawyer profiles for their consultation policy.',
+    faq3Question: 'How does the booking process work?',
+    faq3Answer: 'Select a lawyer, choose an available time slot, and complete the booking. You\'ll receive confirmation via email and SMS.',
+    faq4Question: 'Can I communicate with my lawyer online?',
+    faq4Answer: 'Yes! Our secure messaging system allows you to communicate with your lawyer through the platform.'
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -27,27 +129,27 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Phone',
-      details: ['1-800-LAWNET', '+1 (555) 123-4567'],
-      subtitle: 'Mon-Fri 9am-6pm EST'
+      title: content.phone,
+      details: content.phoneDetails,
+      subtitle: content.phoneSubtitle
     },
     {
       icon: Mail,
-      title: 'Email',
-      details: ['info@lawnet.com', 'support@lawnet.com'],
-      subtitle: 'We respond within 24 hours'
+      title: content.email,
+      details: content.emailDetails,
+      subtitle: content.emailSubtitle
     },
     {
       icon: MapPin,
-      title: 'Office',
-      details: ['123 Legal Street', 'New York, NY 10001'],
-      subtitle: 'Visit us by appointment'
+      title: content.office,
+      details: content.officeDetails,
+      subtitle: content.officeSubtitle
     },
     {
       icon: Clock,
-      title: 'Hours',
-      details: ['Monday - Friday: 9am-6pm', 'Saturday: 10am-4pm'],
-      subtitle: 'Emergency: 24/7'
+      title: content.hours,
+      details: content.hoursDetails,
+      subtitle: content.hoursSubtitle
     }
   ];
 

@@ -11,6 +11,7 @@ import {
   X,
   SlidersHorizontal
 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import './LawyerSearch.css';
 
 // Import lawyer data from JSON file
@@ -29,11 +30,14 @@ const practiceAreas = [
   'Commercial Law',
   'Tax Law',
   'Banking Law',
-  'Intellectual Property'
+  'Intellectual Property',
+  'Land Law',
+  'Immigration Law'
 ];
 
 const LawyerSearch = () => {
   const navigate = useNavigate();
+  const { language } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedArea, setSelectedArea] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
@@ -42,6 +46,65 @@ const LawyerSearch = () => {
   const [availability, setAvailability] = useState('');
   const [showFilters, setShowFilters] = useState(false);
   const [sortBy, setSortBy] = useState('rating');
+
+  // Translations for this page
+  const content = language === 'fr' ? {
+    title: 'Trouvez votre avocat idéal',
+    subtitle: 'Parcourez notre annuaire d\'avocats vérifiés et trouvez le bon expert juridique pour vos besoins',
+    searchPlaceholder: 'Rechercher par nom, spécialisation...',
+    searchBtn: 'Rechercher',
+    filters: 'Filtres',
+    practiceArea: 'Domaine de pratique',
+    allPracticeAreas: 'Tous les domaines',
+    location: 'Lieu',
+    allLocations: 'Tous les lieux',
+    hourlyRate: 'Tarif horaire',
+    minRating: 'Note minimale',
+    availability: 'Disponibilité',
+    availableToday: 'Disponible aujourd\'hui',
+    clearFilters: 'Effacer les filtres',
+    lawyersFound: 'avocats trouvés',
+    sortBy: 'Trier par :',
+    highestRated: 'Les mieux notés',
+    mostReviews: 'Plus d\'avis',
+    priceLowToHigh: 'Prix : Croissant',
+    priceHighToLow: 'Prix : Décroissant',
+    featured: 'Mis en avant',
+    verified: 'Vérifié',
+    perHour: '/heure',
+    book: 'Réserver',
+    message: 'Message',
+    noResults: 'Aucun avocat trouvé',
+    tryAdjusting: 'Essayez d\'ajuster vos filtres'
+  } : {
+    title: 'Find Your Perfect Lawyer',
+    subtitle: 'Browse our directory of verified attorneys and find the right legal expert for your needs',
+    searchPlaceholder: 'Search by name, specialty, or keyword...',
+    searchBtn: 'Search',
+    filters: 'Filters',
+    practiceArea: 'Practice Area',
+    allPracticeAreas: 'All Practice Areas',
+    location: 'Location',
+    allLocations: 'All Locations',
+    hourlyRate: 'Hourly Rate',
+    minRating: 'Minimum Rating',
+    availability: 'Availability',
+    availableToday: 'Available Today',
+    clearFilters: 'Clear All Filters',
+    lawyersFound: 'lawyers found',
+    sortBy: 'Sort by:',
+    highestRated: 'Highest Rated',
+    mostReviews: 'Most Reviews',
+    priceLowToHigh: 'Price: Low to High',
+    priceHighToLow: 'Price: High to Low',
+    featured: 'Featured',
+    verified: 'Verified',
+    perHour: '/hr',
+    book: 'Book',
+    message: 'Message',
+    noResults: 'No lawyers found',
+    tryAdjusting: 'Try adjusting your search filters or search query'
+  };
 
   const filteredLawyers = mockLawyers.filter(lawyer => {
     const matchesSearch = lawyer.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -76,8 +139,10 @@ const LawyerSearch = () => {
       {/* Search Header */}
       <section className="search-header">
         <div className="container">
-          <h1>Find Your Perfect Lawyer</h1>
-          <p>Browse our directory of verified attorneys and find the right legal expert for your needs</p>
+          <h1>{language === 'fr' ? 'Trouvez votre avocat idéal' : 'Find Your Perfect Lawyer'}</h1>
+          <p>{language === 'fr' 
+            ? 'Parcourez notre annuaire d\'avocats vérifiés et trouvez le bon expert juridique pour vos besoins'
+            : 'Browse our directory of verified attorneys and find the right legal expert for your needs'}</p>
           
           {/* Search Bar */}
           <div className="search-bar">
@@ -85,7 +150,7 @@ const LawyerSearch = () => {
               <Search size={18} className="search-icon" />
               <input 
                 type="text"
-                placeholder="Search by name, specialty, or keyword..."
+                placeholder={content.searchPlaceholder}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -103,19 +168,19 @@ const LawyerSearch = () => {
           {/* Filters Sidebar */}
           <aside className={`filters-sidebar ${showFilters ? 'open' : ''}`}>
             <div className="filters-header">
-              <h3><SlidersHorizontal size={18} /> Filters</h3>
+              <h3><SlidersHorizontal size={18} /> {content.filters}</h3>
               <button className="close-filters" onClick={() => setShowFilters(false)}>
                 <X size={18} />
               </button>
             </div>
 
             <div className="filter-group filter-practice">
-              <label><MapPin size={14} /> Practice Area</label>
+              <label><MapPin size={14} /> {content.practiceArea}</label>
               <select 
                 value={selectedArea} 
                 onChange={(e) => setSelectedArea(e.target.value)}
               >
-                <option value="">All Practice Areas</option>
+                <option value="">{content.allPracticeAreas}</option>
                 {practiceAreas.map(area => (
                   <option key={area} value={area}>{area}</option>
                 ))}
@@ -123,23 +188,23 @@ const LawyerSearch = () => {
             </div>
 
             <div className="filter-group filter-location">
-              <label><MapPin size={14} /> Location</label>
+              <label><MapPin size={14} /> {content.location}</label>
               <select 
                 value={selectedLocation}
                 onChange={(e) => setSelectedLocation(e.target.value)}
               >
-                <option value="">All Locations</option>
-                <option value="New York">New York</option>
-                <option value="Los Angeles">Los Angeles</option>
-                <option value="Chicago">Chicago</option>
-                <option value="Houston">Houston</option>
-                <option value="Miami">Miami</option>
-                <option value="Phoenix">Phoenix</option>
+                <option value="">{content.allLocations}</option>
+                <option value="Douala">Douala</option>
+                <option value="Yaoundé">Yaoundé</option>
+                <option value="Bamenda">Bamenda</option>
+                <option value="Buea">Buea</option>
+                <option value="Kribi">Kribi</option>
+                <option value="Limbe">Limbé</option>
               </select>
             </div>
 
             <div className="filter-group filter-price">
-              <label><Star size={14} /> Hourly Rate: ${priceRange[0]} - ${priceRange[1]}</label>
+              <label><Star size={14} /> {content.hourlyRate}</label>
               <div className="price-range-slider">
                 <div className="range-track"></div>
                 <input 
@@ -152,13 +217,13 @@ const LawyerSearch = () => {
                 <div className="range-fill" style={{ width: `${(priceRange[1] / 100000) * 100}%` }}></div>
               </div>
               <div className="range-labels">
-                <span>$0</span>
-                <span>$100,000</span>
+                <span>0 XAF</span>
+                <span>100,000 XAF</span>
               </div>
             </div>
 
             <div className="filter-group filter-rating">
-              <label><Star size={14} /> Minimum Rating</label>
+              <label><Star size={14} /> {content.minRating}</label>
               <div className="rating-filter">
                 {[4, 3, 2, 1].map(stars => (
                   <button 
@@ -174,14 +239,14 @@ const LawyerSearch = () => {
             </div>
 
             <div className="filter-group filter-availability">
-              <label><Clock size={14} /> Availability</label>
+              <label><Clock size={14} /> {content.availability}</label>
               <div className="availability-filter">
                 <button 
                   className={`availability-option ${availability === 'today' ? 'active' : ''}`}
                   onClick={() => setAvailability(availability === 'today' ? '' : 'today')}
                 >
                   <Clock size={14} />
-                  Available Today
+                  {content.availableToday}
                 </button>
               </div>
             </div>
@@ -261,7 +326,7 @@ const LawyerSearch = () => {
                         <span>{lawyer.experience}</span>
                       </div>
                       <div className="detail">
-                        <span className="price">${lawyer.hourlyRate}/hr</span>
+                        <span className="price">{lawyer.hourlyRate.toLocaleString()} XAF/hr</span>
                       </div>
                     </div>
                     
