@@ -1,6 +1,6 @@
 /* Mobile Mini Banner */
 .mobile-banner {
-  background: #0a2545;
+  background: #000000;
   padding: 10px 0;
 }
 
@@ -72,23 +72,23 @@
 }
 
 .mobile-auth-btn.login {
-  background: #0a2545;
-  color: #ffffff;
+  background: #D4AF37;
+  color: #000000;
 }
 
 .mobile-auth-btn.login:hover {
-  background: #10367D;
-  color: #ffffff;
+  background: #E5C158;
+  color: #000000;
 }
 
 .mobile-auth-btn.register {
-  background: #10367D;
+  background: #000000;
   color: #ffffff;
 }
 
 .mobile-auth-btn.register:hover {
-  background: #0a2545;
-  color: #ffffff;
+  background: #D4AF37;
+  color: #000000;
 }
 
 /* Mobile Language Toggle */
@@ -111,9 +111,9 @@
 
 .mobile-lang-btn:hover,
 .mobile-lang-btn.active {
-  background: #0a2545;
-  color: #ffffff;
-  border-color: #0a2545;
+  background: #D4AF37;
+  color: #000000;
+  border-color: #D4AF37;
 }
 
 /* Responsive */

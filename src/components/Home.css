@@ -64,7 +64,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #10367D;
+  background: #D4AF37;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -99,7 +99,7 @@
 .step-number {
   width: 28px;
   height: 28px;
-  background: #10367D;
+  background: #D4AF37;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -227,7 +227,7 @@
 }
 
 .feature-card:hover {
-  border-color: #10367D;
+  border-color: #D4AF37;
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
@@ -237,14 +237,14 @@
 }
 
 .feature-card:hover .feature-icon {
-  background: #10367D;
-  color: #fff;
+  background: #D4AF37;
+  color: #000;
 }
 
 .feature-card h3 {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: #10367D;
+  color: #D4AF37;
   margin: 0 0 8px;
   font-family: Georgia, serif;
 }
@@ -298,7 +298,7 @@
 }
 
 .lawyer-card:hover {
-  border-color: #10367D;
+  border-color: #D4AF37;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
@@ -403,9 +403,9 @@
 }
 
 .btn-outline:hover {
-  background: #10367D;
-  color: #fff;
-  border-color: #10367D;
+  background: #D4AF37;
+  color: #000;
+  border-color: #D4AF37;
 }
 
 /* Testimonials Section */
@@ -482,7 +482,7 @@
 
 /* CTA Section */
 .cta-section {
-  background: #0a2545;
+  background: #000000;
   padding: 60px 24px;
   text-align: center;
 }

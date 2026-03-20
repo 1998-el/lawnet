@@ -32,7 +32,7 @@
 }
 
 .mobile-footer-logo span span {
-  color: #10367D;
+  color: #D4AF37;
 }
 
 .mobile-footer-desc {
@@ -60,8 +60,8 @@
 }
 
 .mobile-footer-social a:hover {
-  background: #10367D;
-  color: #1a1a1a;
+  background: #D4AF37;
+  color: #000000;
 }
 
 /* Contact Cards */
@@ -91,7 +91,7 @@
 .mobile-contact-icon {
   width: 44px;
   height: 44px;
-  background: #10367D;
+  background: #D4AF37;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -147,7 +147,7 @@
 }
 
 .mobile-link-item:hover {
-  color: #10367D;
+  color: #D4AF37;
 }
 
 /* Bottom */

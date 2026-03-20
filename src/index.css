@@ -9,10 +9,10 @@
    * Clean, Modern, Professional
    */
   
-  /* Primary - Blue: Trust & Professionalism */
-  --primary: #0a2545;
-  --primary-light: #10367D;
-  --primary-dark: #0a2545;
+  /* Primary - Black: Sophistication & Authority */
+  --primary: #000000;
+  --primary-light: #1a1a1a;
+  --primary-dark: #000000;
   
   /* Secondary - Gray: Balance & Sophistication */
   --gray-50: #fafafa;
@@ -26,10 +26,10 @@
   --gray-800: #262626;
   --gray-900: #171717;
   
-  /* Accent - Blue: Subtle Excellence */
-  --accent: #0a2545;
-  --accent-light: #10367D;
-  --accent-gold: #0a2545;
+  /* Accent - Gold: Luxury & Excellence */
+  --accent: #D4AF37;
+  --accent-light: #E5C158;
+  --accent-gold: #D4AF37;
   
   /* Neutrals */
   --white: #ffffff;
@@ -49,7 +49,7 @@
   --legal-navy-950: #0a0a0a;
   --pure-white: #ffffff;
   --cream: #fafafa;
-  --justice-gold: #1a1a1a;
+  --justice-gold: #D4AF37;
   
   /* Typography */
   --font-primary: 'Inter', 'Georgia', 'Times New Roman', serif;

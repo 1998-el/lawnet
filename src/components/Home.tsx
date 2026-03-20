@@ -13,6 +13,7 @@ import {
   MapPin,
   Eye
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import HeroBanner from './HeroBanner';
 import lawyersData from '../data/lawyers.json';
 import { useLanguage } from '../context/LanguageContext';
@@ -20,6 +21,7 @@ import './Home.css';
 
 const Home = () => {
   const { language } = useLanguage();
+  const navigate = useNavigate();
 
   const content = language === 'fr' ? {
     howItWorks: 'Comment LAWNET fonctionne',
@@ -276,8 +278,8 @@ const Home = () => {
                   </div>
                   <p className="lawyer-location"><MapPin size={12} /> {lawyer.location}</p>
                   <div className="lawyer-actions">
-                    <button className="btn-primary"><Eye size={14} /> {content.view}</button>
-                    <button className="btn-outline"><Calendar size={14} /> {language === 'fr' ? 'Réserver' : 'Book'}</button>
+                    <button className="btn-primary" onClick={() => navigate(`/book/${lawyer.id}`)}><Eye size={14} /> {content.view}</button>
+                    <button className="btn-outline" onClick={() => navigate(`/book/${lawyer.id}`)}><Calendar size={14} /> {language === 'fr' ? 'Réserver' : 'Book'}</button>
                   </div>
                 </div>
               </div>
