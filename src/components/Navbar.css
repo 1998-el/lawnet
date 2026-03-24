@@ -6,29 +6,16 @@
    VARIABLES & RESET
    ============================================ */
 :root {
-<<<<<<< HEAD
-  --color-primary-dark: var(--primary);
-  --color-primary-light: var(--secondary);
-  --color-text-light: #999;
-  --color-text-lighter: #666;
-  --color-text-dark: #555;
-  --color-text-darker: var(--primary);
-  --color-white: #fff;
-  --color-gray-border: #e5e5e5;
-  --color-login: var(--secondary);
-  --color-register: var(--primary);
-=======
   --color-primary-dark: #000000;
-  --color-primary-light: #D4AF37;
+  --color-primary-light: #FF6600;
   --color-text-light: #999;
   --color-text-lighter: #666;
-  --color-text-dark: #555;
-  --color-text-darker: #000000;
+  --color-text-dark: #fff;
+  --color-text-darker: #fff;
   --color-white: #fff;
-  --color-gray-border: #e5e5e5;
-  --color-login: #D4AF37;
+  --color-gray-border: #333;
+  --color-login: #FF6600;
   --color-register: #000000;
->>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
   
   --spacing-xs: 4px;
   --spacing-sm: 6px;
@@ -114,7 +101,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  color: var(--color-text-light);
+  color: var(--color-white);
   text-decoration: none;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: 4px;
@@ -129,23 +116,23 @@
 }
 
 .auth-btn.login-btn {
-  background-color: rgba(102, 126, 234, 0.1);
+  background-color: rgba(255, 102, 0, 0.2);
   color: var(--color-login);
 }
 
 .auth-btn.login-btn:hover {
   background-color: var(--color-login);
-  color: var(--color-white);
+  color: #000;
 }
 
 .auth-btn.register-btn {
-  background-color: rgba(118, 75, 162, 0.1);
-  color: var(--color-register);
+  background-color: #fff;
+  color: #000;
 }
 
 .auth-btn.register-btn:hover {
-  background-color: var(--color-register);
-  color: var(--color-white);
+  background-color: #e5e5e5;
+  color: #000;
 }
 
 /* Language Toggle */
@@ -157,7 +144,7 @@
 .lang-btn {
   background: transparent;
   border: none;
-  color: var(--color-text-lighter);
+  color: var(--color-text-light);
   padding: var(--spacing-sm) 10px;
   font-size: var(--font-size-xs);
   font-weight: 500;
@@ -178,7 +165,7 @@
    MAIN NAVBAR
    ============================================ */
 .navbar {
-  background: var(--color-white);
+  background: #000000;
   border-bottom: 1px solid var(--color-gray-border);
   position: sticky;
   top: 0;
@@ -202,7 +189,7 @@
   font-family: Georgia, serif;
   font-size: var(--font-size-xl);
   font-weight: 400;
-  color: var(--color-primary-dark);
+  color: var(--color-white);
   letter-spacing: -0.02em;
   text-decoration: none;
 }
@@ -214,7 +201,7 @@
 }
 
 .navbar-logo span {
-  color: var(--color-primary-dark);
+  color: var(--color-white);
   font-weight: 600;
 }
 
@@ -231,7 +218,7 @@
 .nav-link {
   display: block;
   padding: var(--spacing-md) var(--spacing-lg);
-  color: var(--color-text-dark);
+  color: #fff;
   font-size: var(--font-size-sm);
   font-weight: 400;
   text-decoration: none;
@@ -240,18 +227,18 @@
 }
 
 .nav-link:hover {
-  color: var(--color-text-darker);
+  color: var(--color-primary-light);
 }
 
 .nav-link.active {
-  color: var(--color-text-darker);
+  color: var(--color-primary-light);
   font-weight: 500;
 }
 
 /* CTA Button */
 .nav-link.btn-contact {
-  background: var(--color-primary-dark);
-  color: var(--color-white);
+  background: var(--color-primary-light);
+  color: #000;
   margin-left: var(--spacing-md);
   padding: 10px 20px;
   font-weight: 400;
@@ -259,8 +246,8 @@
 }
 
 .nav-link.btn-contact:hover {
-  background: var(--color-primary-light);
-  color: var(--color-white);
+  background: #fff;
+  color: #000;
 }
 
 /* Mobile Menu Toggle */
@@ -269,7 +256,7 @@
   padding: var(--spacing-md);
   background: none;
   border: none;
-  color: var(--color-primary-dark);
+  color: #fff;
   cursor: pointer;
 }
 
@@ -304,7 +291,7 @@
     top: 65px;
     left: 0;
     right: 0;
-    background: var(--color-white);
+    background: #000;
     flex-direction: column;
     padding: var(--spacing-lg);
     gap: var(--spacing-xs);
