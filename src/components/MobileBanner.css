@@ -1,10 +1,6 @@
 /* Mobile Mini Banner */
 .mobile-banner {
-<<<<<<< HEAD
-  background: var(--primary);
-=======
   background: #000000;
->>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
   padding: 10px 0;
 }
 
@@ -15,6 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #000;
 }
 
 /* Contact Info */
@@ -35,7 +32,7 @@
 }
 
 .mobile-contact-item:hover {
-  color: #d4d4d4;
+  color: #FF6600;
 }
 
 .contact-icon {
@@ -46,7 +43,7 @@
 }
 
 .mobile-contact-item:hover .contact-icon {
-  color: #d4d4d4;
+  color: #FF6600;
 }
 
 .contact-text {
@@ -76,42 +73,23 @@
 }
 
 .mobile-auth-btn.login {
-<<<<<<< HEAD
-  background: var(--primary);
-  color: #ffffff;
-}
-
-.mobile-auth-btn.login:hover {
-  background: var(--primary-light);
-  color: #ffffff;
-}
-
-.mobile-auth-btn.register {
-  background: var(--primary-light);
-=======
-  background: #D4AF37;
+  background: #FF6600;
   color: #000000;
 }
 
 .mobile-auth-btn.login:hover {
-  background: #E5C158;
+  background: #FF8533;
   color: #000000;
 }
 
 .mobile-auth-btn.register {
-  background: #000000;
->>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
 }
 
 .mobile-auth-btn.register:hover {
-<<<<<<< HEAD
-  background: var(--primary);
-  color: #ffffff;
-=======
-  background: #D4AF37;
+  background: #e5e5e5;
   color: #000000;
->>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
 }
 
 /* Mobile Language Toggle */
@@ -122,8 +100,8 @@
 
 .mobile-lang-btn {
   background: transparent;
-  border: 1px solid #3b5998;
-  color: #a3a3a3;
+  border: 1px solid #FF6600;
+  color: #FF6600;
   padding: 8px 14px;
   border-radius: 4px;
   cursor: pointer;
@@ -134,26 +112,22 @@
 
 .mobile-lang-btn:hover,
 .mobile-lang-btn.active {
-<<<<<<< HEAD
-  background: var(--primary);
-  color: #ffffff;
-  border-color: var(--primary);
-=======
-  background: #D4AF37;
+  background: #FF6600;
   color: #000000;
-  border-color: #D4AF37;
->>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
+  border-color: #FF6600;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .mobile-banner {
+    background-color: #000;
     display: none;
   }
   
   .mobile-banner-container {
     flex-wrap: wrap;
     gap: 10px;
+    background-color: #000;
   }
   
   .mobile-banner-contact {
