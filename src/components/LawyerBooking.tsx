@@ -3,45 +3,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Star, MapPin, Clock, Calendar, MessageSquare, Check, Video, Check as CheckIcon } from 'lucide-react';
 import './LawyerBooking.css';
 
-// Mock lawyer data
-const mockLawyers = [
-  {
-    id: 1,
-    name: 'Sarah Johnson',
-    specialty: 'Criminal Defense Attorney',
-    location: 'New York, NY',
-    rating: 4.9,
-    reviews: 127,
-    experience: '15 years',
-    hourlyRate: 350,
-    languages: ['English', 'Spanish'],
-    education: 'Harvard Law School',
-    bio: 'Experienced criminal defense attorney with a track record of successful case outcomes. Dedicated to protecting client rights and providing aggressive legal representation.',
-    image: '/assets/avatar.jpg',
-    verified: true,
-    skills: ['Criminal Defense', 'DUI', 'Traffic Law', 'Appeals'],
-    responseTime: 'Less than 1 hour',
-    completedCases: '500+'
-  },
-  {
-    id: 2,
-    name: 'Michael Chen',
-    specialty: 'Family Law Specialist',
-    location: 'Los Angeles, CA',
-    rating: 4.8,
-    reviews: 98,
-    experience: '12 years',
-    hourlyRate: 300,
-    languages: ['English', 'Mandarin'],
-    education: 'Stanford Law School',
-    bio: 'Compassionate family law attorney specializing in divorce, custody disputes, and adoption cases.',
-    image: '/assets/avatar.png',
-    verified: true,
-    skills: ['Family Law', 'Divorce', 'Custody', 'Adoption'],
-    responseTime: '2 hours',
-    completedCases: '350+'
-  }
-];
+// Import lawyer data from JSON file
+import lawyersData from '../data/lawyers.json';
+
+// Use the imported data
+const mockLawyers = lawyersData;
 
 const timeSlots = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'];
 
@@ -55,6 +21,11 @@ const LawyerBooking = () => {
   const [confirmed, setConfirmed] = useState(false);
 
   const lawyer = mockLawyers.find(l => l.id === Number(id)) || mockLawyers[0];
+  
+  // Default values for missing fields
+  const responseTime = lawyer.responseTime || lawyer.availability || 'Quick response';
+  const completedCases = lawyer.completedCases || lawyer.reviews + '+';
+  const skills = lawyer.skills || [lawyer.specialty];
 
   const handleBooking = () => {
     if (selectedDate && selectedTime) {
@@ -128,9 +99,9 @@ const LawyerBooking = () => {
             <div className="profile-stats">
               <div className="stat-box"><span className="stat-value">${lawyer.hourlyRate}</span><span className="stat-label">per hour</span></div>
               <div className="stat-divider" />
-              <div className="stat-box"><span className="stat-value">{lawyer.responseTime}</span><span className="stat-label">response</span></div>
+              <div className="stat-box"><span className="stat-value">{responseTime}</span><span className="stat-label">response</span></div>
               <div className="stat-divider" />
-              <div className="stat-box"><span className="stat-value">{lawyer.completedCases}</span><span className="stat-label">completed</span></div>
+              <div className="stat-box"><span className="stat-value">{completedCases}</span><span className="stat-label">completed</span></div>
             </div>
 
             <div className="profile-bio">
@@ -139,7 +110,7 @@ const LawyerBooking = () => {
             </div>
 
             <div className="profile-skills">
-              {lawyer.skills.map(skill => <span key={skill} className="skill-tag">{skill}</span>)}
+              {skills.map((skill: string) => <span key={skill} className="skill-tag">{skill}</span>)}
             </div>
 
             <div className="profile-languages">

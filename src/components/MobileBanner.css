@@ -1,6 +1,10 @@
 /* Mobile Mini Banner */
 .mobile-banner {
+<<<<<<< HEAD
   background: var(--primary);
+=======
+  background: #000000;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
   padding: 10px 0;
 }
 
@@ -72,6 +76,7 @@
 }
 
 .mobile-auth-btn.login {
+<<<<<<< HEAD
   background: var(--primary);
   color: #ffffff;
 }
@@ -83,12 +88,30 @@
 
 .mobile-auth-btn.register {
   background: var(--primary-light);
+=======
+  background: #D4AF37;
+  color: #000000;
+}
+
+.mobile-auth-btn.login:hover {
+  background: #E5C158;
+  color: #000000;
+}
+
+.mobile-auth-btn.register {
+  background: #000000;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
   color: #ffffff;
 }
 
 .mobile-auth-btn.register:hover {
+<<<<<<< HEAD
   background: var(--primary);
   color: #ffffff;
+=======
+  background: #D4AF37;
+  color: #000000;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
 }
 
 /* Mobile Language Toggle */
@@ -111,9 +134,15 @@
 
 .mobile-lang-btn:hover,
 .mobile-lang-btn.active {
+<<<<<<< HEAD
   background: var(--primary);
   color: #ffffff;
   border-color: var(--primary);
+=======
+  background: #D4AF37;
+  color: #000000;
+  border-color: #D4AF37;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
 }
 
 /* Responsive */

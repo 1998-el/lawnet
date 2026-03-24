@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Scale, Star, Shield, ArrowRight } from 'lucide-react';
 import './HeroBanner.css';
 
 const HeroBanner: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+    } else {
+      navigate('/search');
+    }
+  };
+
   return (
     <section className="hero-banner">
       <img 
@@ -15,6 +28,7 @@ const HeroBanner: React.FC = () => {
       <div className="hero-banner-content">
        
         
+        
         <h1 className="hero-banner-title">
           Your Trusted<br />
           Legal Partner
@@ -25,13 +39,18 @@ const HeroBanner: React.FC = () => {
           to protect your interests with excellence.
         </p>
         
-        <div className="hero-banner-search">
+        <form className="hero-banner-search" onSubmit={handleSearch}>
           <div className="hero-banner-search-input">
             <ArrowRight size={18} className="search-icon" />
-            <input type="text" placeholder="Search for a lawyer, a domain..." />
+            <input 
+              type="text" 
+              placeholder="Search for a lawyer, a domain..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
-          <button className="hero-banner-search-btn">Search</button>
-        </div>
+          <button type="submit" className="hero-banner-search-btn">Search</button>
+        </form>
         
         <div className="hero-banner-stats">
           <div className="hero-banner-stat">

@@ -32,7 +32,11 @@
 }
 
 .mobile-footer-logo span span {
+<<<<<<< HEAD
   color: var(--secondary);
+=======
+  color: #D4AF37;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
 }
 
 .mobile-footer-desc {
@@ -60,8 +64,13 @@
 }
 
 .mobile-footer-social a:hover {
+<<<<<<< HEAD
   background: var(--secondary);
   color: #fff;
+=======
+  background: #D4AF37;
+  color: #000000;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
 }
 
 /* Contact Cards */
@@ -91,7 +100,11 @@
 .mobile-contact-icon {
   width: 44px;
   height: 44px;
+<<<<<<< HEAD
   background: var(--secondary);
+=======
+  background: #D4AF37;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -147,7 +160,11 @@
 }
 
 .mobile-link-item:hover {
+<<<<<<< HEAD
   color: var(--secondary);
+=======
+  color: #D4AF37;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
 }
 
 /* Bottom */

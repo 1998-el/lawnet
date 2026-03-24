@@ -6,6 +6,7 @@
    VARIABLES & RESET
    ============================================ */
 :root {
+<<<<<<< HEAD
   --color-primary-dark: var(--primary);
   --color-primary-light: var(--secondary);
   --color-text-light: #999;
@@ -16,6 +17,18 @@
   --color-gray-border: #e5e5e5;
   --color-login: var(--secondary);
   --color-register: var(--primary);
+=======
+  --color-primary-dark: #000000;
+  --color-primary-light: #D4AF37;
+  --color-text-light: #999;
+  --color-text-lighter: #666;
+  --color-text-dark: #555;
+  --color-text-darker: #000000;
+  --color-white: #fff;
+  --color-gray-border: #e5e5e5;
+  --color-login: #D4AF37;
+  --color-register: #000000;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
   
   --spacing-xs: 4px;
   --spacing-sm: 6px;

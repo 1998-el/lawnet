@@ -334,7 +334,11 @@
 
 .appointment-status.pending {
   background: rgba(255, 193, 7, 0.1);
+<<<<<<< HEAD
   color: var(--secondary);
+=======
+  color: #D4AF37;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
 }
 
 /* Messages */
@@ -488,7 +492,11 @@
 
 .apt-status.pending {
   background: rgba(255, 193, 7, 0.1);
+<<<<<<< HEAD
   color: var(--secondary);
+=======
+  color: #D4AF37;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
 }
 
 .apt-details {

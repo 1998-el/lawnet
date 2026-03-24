@@ -13,47 +13,145 @@ import {
   MapPin,
   Eye
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import HeroBanner from './HeroBanner';
 import lawyersData from '../data/lawyers.json';
+import { useLanguage } from '../context/LanguageContext';
 import './Home.css';
 
 const Home = () => {
+  const { language } = useLanguage();
+  const navigate = useNavigate();
+
+  const content = language === 'fr' ? {
+    howItWorks: 'Comment LAWNET fonctionne',
+    getHelpSteps: 'Obtenez de l\'aide juridique en 3 étapes simples',
+    search: 'Rechercher',
+    searchDesc: 'Parcourez notre annuaire d\'avocats vérifiés par spécialisation, lieu ou nom.',
+    book: 'Réserver',
+    bookDesc: 'Planifiez un rendez-vous à votre convenance avec une réservation en ligne sécurisée.',
+    connect: 'Contacter',
+    connectDesc: 'Discutez, appelez vidéo ou rencontrez votre avocat et obtenez l\'aide juridique dont vous avez besoin.',
+    practiceAreas: 'Domaines de pratique',
+    findLawyers: 'Trouvez des avocats spécialisés dans vos besoins juridiques',
+    criminalDefense: 'Défense pénale',
+    criminalDefenseDesc: 'Représentation juridique experte pour les accusations et procédures pénales.',
+    corporateLaw: 'Droit des sociétés',
+    corporateLawDesc: 'Création d\'entreprise, contrats et affaires juridiques commerciales.',
+    familyLaw: 'Droit de la famille',
+    familyLawDesc: 'Divorce, garde, adoption et questions juridiques familiales.',
+    realEstate: 'Immobilier',
+    realEstateDesc: 'Transactions immobilières, baux et litiges immobiliers.',
+    personalInjury: 'Dommage corporel',
+    personalInjuryDesc: 'Indemnisation pour les blessures et accidents causés par autrui.',
+    immigration: 'Immigration',
+    immigrationDesc: 'Visas, citoyenneté et assistance juridique en immigration.',
+    whyChoose: 'Pourquoi choisir LAWNET ?',
+    mostTrusted: 'La plateforme la plus fiable pour l\'assistance juridique',
+    verifiedLawyers: 'Avocats vérifiés',
+    verifiedLawyersDesc: 'Tous les avocats de notre plateforme sont soigneusement examinés et vérifiés.',
+    honestReviews: 'Avis honnêtes',
+    honestReviewsDesc: 'De vrais avis de clients vérifiés pour vous aider à prendre des décisions éclairées.',
+    easyScheduling: 'Planification facile',
+    easySchedulingDesc: 'Réservez des rendez-vous qui correspondent à votre emploi du temps avec confirmation instantanée.',
+    secureMessaging: 'Messagerie sécurisée',
+    secureMessagingDesc: 'Communiquez en toute sécurité avec votre avocat grâce à un messagerie chiffrée.',
+    availability247: 'Disponibilité 24h/24',
+    availability247Desc: 'Accédez à l\'aide juridique à tout moment avec notre support disponible.',
+    transparentPricing: 'Tarification transparente',
+    transparentPricingDesc: 'Structures de frais claires sans coûts cachés ni surprises.',
+    featuredLawyers: 'Avocats en vedette',
+    topLawyers: 'Les avocats les mieux notés prêts à vous aider',
+    view: 'Voir',
+    viewAllLawyers: 'Voir tous les avocats',
+    whatClientsSay: 'Ce que disent nos clients',
+    realStories: 'De vraies histoires de vrais clients qui ont trouvé une aide juridique sur LAWNET',
+    ctaTitle: 'Prêt à trouver votre avocat ?',
+    ctaDesc: 'Rejoignez des milliers de clients satisfaits qui ont trouvé le bon avocat sur LAWNET.',
+    getStarted: 'Commencer'
+  } : {
+    howItWorks: 'How LAWNET Works',
+    getHelpSteps: 'Get legal help in 3 simple steps',
+    search: 'Search',
+    searchDesc: 'Browse through our directory of verified lawyers by specialty, location, or name.',
+    book: 'Book',
+    bookDesc: 'Schedule an appointment at your convenience with secure online booking.',
+    connect: 'Connect',
+    connectDesc: 'Chat, video call, or meet your lawyer and get the legal help you need.',
+    practiceAreas: 'Practice Areas',
+    findLawyers: 'Find lawyers specializing in your legal needs',
+    criminalDefense: 'Criminal Defense',
+    criminalDefenseDesc: 'Expert legal representation for criminal charges and proceedings.',
+    corporateLaw: 'Corporate Law',
+    corporateLawDesc: 'Business formation, contracts, and commercial legal matters.',
+    familyLaw: 'Family Law',
+    familyLawDesc: 'Divorce, custody, adoption, and family-related legal issues.',
+    realEstate: 'Real Estate',
+    realEstateDesc: 'Property transactions, leases, and real estate disputes.',
+    personalInjury: 'Personal Injury',
+    personalInjuryDesc: 'Compensation for injuries and accidents caused by others.',
+    immigration: 'Immigration',
+    immigrationDesc: 'Visas, citizenship, and immigration legal assistance.',
+    whyChoose: 'Why Choose LAWNET?',
+    mostTrusted: 'The most trusted platform for legal assistance',
+    verifiedLawyers: 'Verified Lawyers',
+    verifiedLawyersDesc: 'All lawyers on our platform are thoroughly vetted and verified for credentials.',
+    honestReviews: 'Honest Reviews',
+    honestReviewsDesc: 'Real reviews from verified clients to help you make informed decisions.',
+    easyScheduling: 'Easy Scheduling',
+    easySchedulingDesc: 'Book appointments that fit your schedule with instant confirmation.',
+    secureMessaging: 'Secure Messaging',
+    secureMessagingDesc: 'Communicate safely with your lawyer through encrypted messaging.',
+    availability247: '24/7 Availability',
+    availability247Desc: 'Access legal help anytime with our round-the-clock platform support.',
+    transparentPricing: 'Transparent Pricing',
+    transparentPricingDesc: 'Clear fee structures with no hidden costs or surprises.',
+    featuredLawyers: 'Featured Lawyers',
+    topLawyers: 'Top-rated lawyers ready to help you',
+    view: 'View',
+    viewAllLawyers: 'View All Lawyers',
+    whatClientsSay: 'What Our Clients Say',
+    realStories: 'Real stories from real clients who found legal help on LAWNET',
+    ctaTitle: 'Ready to find your lawyer?',
+    ctaDesc: 'Join thousands of satisfied clients who found the right lawyer on LAWNET.',
+    getStarted: 'Get Started'
+  };
 
   const features = [
     {
       id: 1,
-      title: "Verified Lawyers",
-      description: "All lawyers on our platform are thoroughly vetted and verified for credentials.",
+      title: language === 'fr' ? 'Avocats vérifiés' : 'Verified Lawyers',
+      description: language === 'fr' ? 'Tous les avocats de notre plateforme sont soigneusement examinés.' : 'All lawyers on our platform are thoroughly vetted and verified for credentials.',
       image: "/assets/129364.jpg"
     },
     {
       id: 2,
-      title: "Honest Reviews",
-      description: "Real reviews from verified clients to help you make informed decisions.",
+      title: language === 'fr' ? 'Avis honnêtes' : 'Honest Reviews',
+      description: language === 'fr' ? 'De vrais avis de clients vérifiés pour vous aider à prendre des décisions.' : 'Real reviews from verified clients to help you make informed decisions.',
       image: "/assets/droit.jpg"
     },
     {
       id: 3,
-      title: "Easy Scheduling",
-      description: "Book appointments that fit your schedule with instant confirmation.",
+      title: language === 'fr' ? 'Planification facile' : 'Easy Scheduling',
+      description: language === 'fr' ? 'Réservez des rendez-vous qui correspondent à votre emploi du temps.' : 'Book appointments that fit your schedule with instant confirmation.',
       image: "/assets/devis.jpg"
     },
     {
       id: 4,
-      title: "Secure Messaging",
-      description: "Communicate safely with your lawyer through encrypted messaging.",
+      title: language === 'fr' ? 'Messagerie sécurisée' : 'Secure Messaging',
+      description: language === 'fr' ? 'Communiquez en toute sécurité avec votre avocat.' : 'Communicate safely with your lawyer through encrypted messaging.',
       image: "/assets/ticket.jpg"
     },
     {
       id: 5,
-      title: "24/7 Availability",
-      description: "Access legal help anytime with our round-the-clock platform support.",
+      title: language === 'fr' ? 'Disponibilité 24h/24' : '24/7 Availability',
+      description: language === 'fr' ? 'Accédez à l\'aide juridique à tout moment.' : 'Access legal help anytime with our round-the-clock platform support.',
       image: "/assets/services.jpg"
     },
     {
       id: 6,
-      title: "Transparent Pricing",
-      description: "Clear fee structures with no hidden costs or surprises.",
+      title: language === 'fr' ? 'Tarification transparente' : 'Transparent Pricing',
+      description: language === 'fr' ? 'Structures de frais claires sans coûts cachés.' : 'Clear fee structures with no hidden costs or surprises.',
       image: "/assets/banner_2.jpg"
     }
   ];
@@ -66,8 +164,8 @@ const Home = () => {
       {/* How It Works Section */}
       <section id="how-it-works" className="how-it-works">
         <div className="section-container">
-          <h2 className="section-title">How LAWNET Works</h2>
-          <p className="section-subtitle">Get legal help in 3 simple steps</p>
+          <h2 className="section-title">{content.howItWorks}</h2>
+          <p className="section-subtitle">{content.getHelpSteps}</p>
           
           <div className="steps-grid">
             <div className="step-card">
@@ -75,24 +173,24 @@ const Home = () => {
               <div className="step-icon">
                 <Search size={28} />
               </div>
-              <h3>Search</h3>
-              <p>Browse through our directory of verified lawyers by specialty, location, or name.</p>
+              <h3>{content.search}</h3>
+              <p>{content.searchDesc}</p>
             </div>
             <div className="step-card">
               <div className="step-number">2</div>
               <div className="step-icon">
                 <Calendar size={28} />
               </div>
-              <h3>Book</h3>
-              <p>Schedule an appointment at your convenience with secure online booking.</p>
+              <h3>{content.book}</h3>
+              <p>{content.bookDesc}</p>
             </div>
             <div className="step-card">
               <div className="step-number">3</div>
               <div className="step-icon">
                 <MessageSquare size={28} />
               </div>
-              <h3>Connect</h3>
-              <p>Chat, video call, or meet your lawyer and get the legal help you need.</p>
+              <h3>{content.connect}</h3>
+              <p>{content.connectDesc}</p>
             </div>
           </div>
         </div>
@@ -101,39 +199,39 @@ const Home = () => {
       {/* Practice Areas Section */}
       <section id="practice-areas" className="practice-areas">
         <div className="section-container">
-          <h2 className="section-title">Practice Areas</h2>
-          <p className="section-subtitle">Find lawyers specializing in your legal needs</p>
+          <h2 className="section-title">{content.practiceAreas}</h2>
+          <p className="section-subtitle">{content.findLawyers}</p>
           
           <div className="areas-grid">
             <div className="area-card">
               <Gavel size={32} />
-              <h3>Criminal Defense</h3>
-              <p>Expert legal representation for criminal charges and proceedings.</p>
+              <h3>{content.criminalDefense}</h3>
+              <p>{content.criminalDefenseDesc}</p>
             </div>
             <div className="area-card">
               <Briefcase size={32} />
-              <h3>Corporate Law</h3>
-              <p>Business formation, contracts, and commercial legal matters.</p>
+              <h3>{content.corporateLaw}</h3>
+              <p>{content.corporateLawDesc}</p>
             </div>
             <div className="area-card">
               <Heart size={32} />
-              <h3>Family Law</h3>
-              <p>Divorce, custody, adoption, and family-related legal issues.</p>
+              <h3>{content.familyLaw}</h3>
+              <p>{content.familyLawDesc}</p>
             </div>
             <div className="area-card">
               <FileText size={32} />
-              <h3>Real Estate</h3>
-              <p>Property transactions, leases, and real estate disputes.</p>
+              <h3>{content.realEstate}</h3>
+              <p>{content.realEstateDesc}</p>
             </div>
             <div className="area-card">
               <Scale size={32} />
-              <h3>Personal Injury</h3>
-              <p>Compensation for injuries and accidents caused by others.</p>
+              <h3>{content.personalInjury}</h3>
+              <p>{content.personalInjuryDesc}</p>
             </div>
             <div className="area-card">
               <Shield size={32} />
-              <h3>Immigration</h3>
-              <p>Visas, citizenship, and immigration legal assistance.</p>
+              <h3>{content.immigration}</h3>
+              <p>{content.immigrationDesc}</p>
             </div>
           </div>
         </div>
@@ -142,8 +240,8 @@ const Home = () => {
       {/* Why Choose LAWNET Section */}
       <section id="why-us" className="why-us">
         <div className="section-container">
-          <h2 className="section-title">Why Choose LAWNET?</h2>
-          <p className="section-subtitle">The most trusted platform for legal assistance</p>
+          <h2 className="section-title">{content.whyChoose}</h2>
+          <p className="section-subtitle">{content.mostTrusted}</p>
           
           <div className="features-grid">
             {features.map((feature) => (
@@ -162,8 +260,8 @@ const Home = () => {
       {/* Featured Lawyers Section */}
       <section id="featured-lawyers" className="featured-lawyers">
         <div className="section-container">
-          <h2 className="section-title">Featured Lawyers</h2>
-          <p className="section-subtitle">Top-rated lawyers ready to help you</p>
+          <h2 className="section-title">{content.featuredLawyers}</h2>
+          <p className="section-subtitle">{content.topLawyers}</p>
           
           <div className="lawyers-grid">
             {lawyersData.slice(0, 4).map((lawyer) => (
@@ -180,8 +278,8 @@ const Home = () => {
                   </div>
                   <p className="lawyer-location"><MapPin size={12} /> {lawyer.location}</p>
                   <div className="lawyer-actions">
-                    <button className="btn-primary"><Eye size={14} /> View</button>
-                    <button className="btn-outline"><Calendar size={14} /> Book</button>
+                    <button className="btn-primary" onClick={() => navigate(`/book/${lawyer.id}`)}><Eye size={14} /> {content.view}</button>
+                    <button className="btn-outline" onClick={() => navigate(`/book/${lawyer.id}`)}><Calendar size={14} /> {language === 'fr' ? 'Réserver' : 'Book'}</button>
                   </div>
                 </div>
               </div>
@@ -190,7 +288,7 @@ const Home = () => {
           
           <div className="section-cta">
             <a href="/lawyers" className="btn-outline">
-              View All Lawyers <ArrowRight size={16} />
+              {content.viewAllLawyers} <ArrowRight size={16} />
             </a>
           </div>
         </div>
@@ -199,8 +297,8 @@ const Home = () => {
       {/* Testimonials Section */}
       <section id="testimonials" className="testimonials">
         <div className="section-container">
-          <h2 className="section-title">What Our Clients Say</h2>
-          <p className="section-subtitle">Real stories from real clients who found legal help on LAWNET</p>
+          <h2 className="section-title">{content.whatClientsSay}</h2>
+          <p className="section-subtitle">{content.realStories}</p>
           
           <div className="testimonials-grid">
             <div className="testimonial-card">

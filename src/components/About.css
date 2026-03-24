@@ -14,7 +14,11 @@
 
 /* Hero Section */
 .about-hero {
+<<<<<<< HEAD
   background: var(--primary);
+=======
+  background: #000000;
+>>>>>>> 2cfecebd2d73246748d98b2354c15c2d6fbeda73
   padding: 80px 0 96px;
   text-align: center;
 }
