@@ -8,7 +8,7 @@
 
 /* Search Header */
 .search-header {
-  background: #0a2545;
+  background: var(--primary);
   padding: 48px 0 56px;
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
@@ -63,7 +63,7 @@
   border: none;
   outline: none;
   font-size: 0.875rem;
-  color: #1a1a1a;
+  color: var(--primary);
   background: transparent;
 }
 

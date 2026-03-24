@@ -17,7 +17,7 @@
   font-family: Georgia, serif;
   font-size: clamp(1.5rem, 2.5vw, 1.75rem);
   font-weight: 400;
-  color: #1a1a1a;
+  color: var(--primary);
   margin: 0 0 8px;
   text-align: center;
 }
@@ -64,13 +64,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #10367D;
+  background: var(--primary);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .step-card:hover {
-  border-color: #1a1a1a;
+  border-color: var(--primary);
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
@@ -81,12 +81,12 @@
 
 .step-card:hover .step-number {
   background: #fff;
-  color: #1a1a1a;
+  color: var(--primary);
 }
 
 .step-card:hover .step-icon {
   background: #fff;
-  color: #1a1a1a;
+  color: var(--primary);
 }
 
 .step-card:hover h3,
@@ -99,7 +99,7 @@
 .step-number {
   width: 28px;
   height: 28px;
-  background: #10367D;
+  background: var(--primary);
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -131,7 +131,7 @@
 .step-card h3 {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--primary);
   margin: 0 0 8px;
   font-family: Georgia, serif;
   position: relative;
@@ -171,13 +171,13 @@
 }
 
 .area-card:hover {
-  border-color: #1a1a1a;
+  border-color: var(--primary);
 }
 
 .area-card h3 {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--primary);
   margin: 0 0 8px;
   font-family: Georgia, serif;
 }
@@ -221,13 +221,13 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: #1a1a1a;
+  background: var(--primary);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
 
 .feature-card:hover {
-  border-color: #10367D;
+  border-color: var(--primary);
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
@@ -237,14 +237,14 @@
 }
 
 .feature-card:hover .feature-icon {
-  background: #10367D;
+  background: var(--primary);
   color: #fff;
 }
 
 .feature-card h3 {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: #10367D;
+  color: var(--primary);
   margin: 0 0 8px;
   font-family: Georgia, serif;
 }
@@ -298,7 +298,7 @@
 }
 
 .lawyer-card:hover {
-  border-color: #10367D;
+  border-color: var(--primary);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
@@ -329,7 +329,7 @@
 .lawyer-info h3 {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--primary);
   margin: 0 0 4px;
   font-family: Georgia, serif;
 }
@@ -348,7 +348,7 @@
 }
 
 .star.filled {
-  color: #1a1a1a;
+  color: var(--primary);
 }
 
 .star.empty {
@@ -393,7 +393,7 @@
   gap: 8px;
   padding: 12px 24px;
   background: transparent;
-  color: #1a1a1a;
+  color: var(--primary);
   border: 1px solid #e5e5e5;
   border-radius: 4px;
   font-size: 0.875rem;
@@ -403,9 +403,9 @@
 }
 
 .btn-outline:hover {
-  background: #10367D;
+  background: var(--primary);
   color: #fff;
-  border-color: #10367D;
+  border-color: var(--primary);
 }
 
 /* Testimonials Section */
@@ -469,7 +469,7 @@
 .testimonial-author h4 {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--primary);
   margin: 0;
   font-family: Georgia, serif;
 }
@@ -482,7 +482,7 @@
 
 /* CTA Section */
 .cta-section {
-  background: #0a2545;
+  background: var(--primary);
   padding: 60px 24px;
   text-align: center;
 }
