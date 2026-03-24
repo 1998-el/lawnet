@@ -2,6 +2,7 @@
 .mobile-banner {
   background: #000000;
   padding: 10px 0;
+  border-bottom: 1px solid #cccccc4a;
 }
 
 .mobile-banner-container {
